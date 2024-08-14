@@ -16,18 +16,7 @@ Type a command and press Enter to execute it.
 const Devmode: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [history, setHistory] = useState<{ command: string, output: string | JSX.Element }[]>([]);
-  const [displayedGuide, setDisplayedGuide] = useState<string>('Welcome to the Devmode Terminal!');
-
-  useEffect(() => {
-    let i = 0;
-    const intervalId = setInterval(() => {
-      setDisplayedGuide(prev => prev + guideText.charAt(i));
-      i++;
-      if (i === guideText.length) {
-        clearInterval(intervalId);
-      }
-    }, 50); // Adjust typing speed here
-  }, []);
+  const [displayedGuide, setDisplayedGuide] = useState<string>('Welcome to the Devmode Terminal!\n\n' + guideText);
 
   const handleCommand = async () => {
     let output: string | JSX.Element = '';
@@ -72,7 +61,7 @@ const Devmode: React.FC = () => {
   return (
     <div style={{ backgroundColor: '#000', color: '#0f0', padding: '10px', fontFamily: 'monospace', height: '100vh', overflowY: 'auto' }}>
       <div style={{ marginBottom: '10px' }}>
-        {/* Guide Text with Typewriter Effect */}
+        {/* Guide Text */}
         <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', marginBottom: '10px', color: '#0f0' }}>
           {displayedGuide}
         </pre>
