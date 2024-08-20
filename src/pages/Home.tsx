@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import Devmode from "./Devmode";
 import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import haard from '../data/images/haard3.png'
+import Navbar from "@/components/Navbar";
 const Home = () => {
   const [devMode, setDevMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +41,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col" style={{ fontFamily: "'Edu VIC WA NT Beginner', sans-serif" }}>
+    <div className="flex flex-col" style={{ fontFamily: "'Orbitron', sans-serif" }}>
       {isLoading ? (
         <div className="flex flex-col justify-center items-center h-screen">
           <div className="w-64 h-2 border-2 bg-gray-300 mb-4">
@@ -50,7 +51,8 @@ const Home = () => {
         </div>
       ) : (
         !devMode ? (
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-full">
+            <Navbar />
             <div className="flex text-9xl p-7">
               Hello!<br />
               Haard Here!
@@ -82,7 +84,10 @@ const Home = () => {
                 <FontAwesomeIcon icon={faInstagram} className="text-pink-500 hover:text-pink-700 text-5xl" />
                 <p className="text-2xl">haard.solanki</p>
               </a>
-
+              <a href="https://www.youtube.com/@haardsolanki9398" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faYoutube} className=" text-red-700 hover:text-blue-700 text-5xl" />
+                <p className="text-2xl">solanki_haard</p>
+              </a>
 
             </div>
           </div>

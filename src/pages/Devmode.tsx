@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getGithubStats } from '@/data/github';
 import Home from './Home'; // Import Home component to switch back
+import { projects } from '@/data/projects'; // Import your projects data
 
 const guideText = `
 Available commands:
@@ -17,7 +18,7 @@ Type a command and press Enter to execute it.
 const Devmode: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [history, setHistory] = useState<{ command: string, output: string | JSX.Element }[]>([]);
-  const [displayedGuide, ] = useState<string>('Welcome to the Devmode Terminal!\n\n' + guideText);
+  const [displayedGuide] = useState<string>('Welcome to the Devmode Terminal!\n\n' + guideText);
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const [backToHome, setBackToHome] = useState<boolean>(false);
   const [loadingAnimation, setLoadingAnimation] = useState<string>(''); // State for animation
@@ -38,9 +39,28 @@ const Devmode: React.FC = () => {
     let output: string | JSX.Element = '';
     switch (input.trim()) {
       case '/projects':
-        setIsLoading('Installing projects package');
-        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
-        output = projects.map(p => `${p.name}: ${p.description}`).join('\n');
+        setIsLoading('Loading projects...');
+        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate loading time
+
+        output = (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {projects.map((project) => (
+              <div key={project.name} className="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <img src={project.image} alt={project.name} className="w-full h-32 object-cover rounded-md mb-4" />
+                <h2 className="text-xl font-semibold text-green-500">{project.name}</h2>
+                <p className="text-gray-400">{project.description}</p>
+                <div className="mt-4">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline mr-4">
+                    View Project
+                  </a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        );
         break;
       case '/skills':
         setIsLoading('Installing skills package');
@@ -85,41 +105,34 @@ const Devmode: React.FC = () => {
     }
   };
 
-  const projects: { name: string; description: string }[] = [
-    { name: "Project 1", description: "This is the first project" },
-    { name: "Project 2", description: "This is the second project" },
-    { name: "Project 3", description: "This is the third project" },
-  ];
-
   const skills = ["React", "Node.js", "TypeScript", "Tailwind CSS"];
   const about = "I'm a web developer with experience in web3 and AI";
-
 
   if (backToHome) {
     return <Home />; // Return to Home component
   }
 
   return (
-    <div className="bg-black text-green-500 p-10 font-mono h-screen overflow-y-auto" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+    <div className="bg-black text-green-500 p-10 font-mono h-screen overflow-y-auto tracking-widest" style={{ fontFamily: "'Orbitron', sans-serif" }}>
       <div className="mb-10">
         {/* Guide Text */}
-        <pre className="whitespace-pre-wrap break-words mb-10 text-green-500" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+        <pre className="whitespace-pre-wrap break-words mb-10 text-green-500" style={{ fontFamily: "'Orbitron', sans-serif" }}>
           {displayedGuide}
         </pre>
         {/* Command History */}
         {history.map((entry, index) => (
           <div key={index}>
-            <div className="text-green-500" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+            <div className="text-green-500" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               $ {entry.command}
             </div>
-            <pre className="whitespace-pre-wrap break-words" style={{ fontFamily: "'Exo 2', sans-serif" }}>
+            <pre className="whitespace-pre-wrap break-words" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {entry.output}
             </pre>
           </div>
         ))}
       </div>
       {isLoading ? (
-        <div style={{ fontFamily: "'Exo 2', sans-serif" }}>
+        <div style={{ fontFamily: "'Orbitron', sans-serif" }}>
           {isLoading}
           {loadingAnimation}
         </div>
@@ -131,7 +144,7 @@ const Devmode: React.FC = () => {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             className="bg-transparent text-green-500 border-none outline-none w-90"
-            style={{ fontFamily: "'Exo 2', sans-serif" }}
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
         </div>
       )}
