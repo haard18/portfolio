@@ -2,6 +2,10 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
+import sam from '../data/images/sam.png';
+import churn from '../data/images/churn.png';
+import dumdum from '../data/images/dumdum.png';
+import opus from '../data/images/opus.png';
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -73,7 +77,7 @@ export function ExpandableCardDemo() {
                 <img
                   width={200}
                   height={200}
-                  src={active.src}
+                  src={active.src.dumdum || active.src.sam || active.src.churn || active.src.opus}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
@@ -136,7 +140,7 @@ export function ExpandableCardDemo() {
                 <img
                   width={100}
                   height={100}
-                  src={card.src}
+                  src={card.src.dumdum || card.src.sam || card.src.churn || card.src.opus}
                   alt={card.title}
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
@@ -205,7 +209,7 @@ const cards = [
   {
     description: "DumDumDeploy",
     title: "A simple deployment tool for deploying your projects on Arweave",
-    src: "src/data/images/dumdum.png",
+    src: {dumdum},
     ctaText: "Details",
     ctaLink: "https://dumdumdeploy.vercel.app",
     content: () => {
@@ -222,7 +226,7 @@ const cards = [
   {
     description: "SAM-SUPPORT",
     title: "End to End Support Mechanism for Arweave and AO processes",
-    src: "src/data/images/sam.png",
+    src: {sam},
     ctaText: "Details",
     ctaLink: "https://sam-support.arweave.net",
     content: () => {
@@ -239,7 +243,7 @@ const cards = [
   {
     description: "Churn-O-Analyzer",
     title: "Customer Churn Analyzer for Telecom Industry",
-    src: "src/data/images/churn.png",
+    src: {churn},
     ctaText: "Details",
     ctaLink: "https://churn-frontend-rho.vercel.app/",
     content: () => {
@@ -256,7 +260,7 @@ const cards = [
   {
     description: "Opus Stellar",
     title: "Buy your own piece of LAND in your favourite Metaverse",
-    src: "src/data/images/opus.png",
+    src:{opus},
     ctaText: "Details",
     ctaLink: "https://devfolio.co/projects/opus-stellar-70b7",
     content: () => {
