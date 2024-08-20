@@ -1,5 +1,5 @@
 import { ExpandableCardDemo } from '@/components/Cards';
-import React from 'react';
+
 
 const Projects = () => {
   return (
