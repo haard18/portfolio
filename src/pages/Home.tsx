@@ -4,7 +4,7 @@ import Devmode from "./Devmode";
 import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import haard from '../data/images/haard3.png'
 const Home = () => {
   const [devMode, setDevMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -57,7 +57,7 @@ const Home = () => {
             </div>
             <br />
             <div className="flex right-0 top-0 bottom-0 mr-5 absolute">
-              <img src="src/data/images/haard3.png" alt="Haard" />
+              <img src={haard} alt="Haard" />
             </div>
             <div className="text-2xl pt-5 flex flex-col p-7">
               Ready To Switch On Dev Mode?
