@@ -66,26 +66,26 @@ const Home = () => {
               <Switch id="Dev-Mode" onClick={handleSwitchChange} />
               <label htmlFor="Dev-Mode">Go Dev Mode</label>
             </div>
-            <div className="flex flex-col gap-7 p-7 mt-10">
+            <div className="flex flex-col gap-7 p-7 mt-3">
 
               <a href="https://x.com/solanki_haard" target="_blank" className="flex gap-1 items-center" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faXTwitter} className="text-blue-500 hover:text-blue-700 text-5xl" />
+                <FontAwesomeIcon icon={faXTwitter} className="text-blue-500 hover:text-blue-700 text-2xl" />
                 <p className="text-2xl">solanki_haard</p>
               </a>
               <a href="https://github.com/haard18" target="_blank" className="flex items-center gap-1" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithub} className="text-gray-800 hover:text-gray-600 text-5xl" />
+                <FontAwesomeIcon icon={faGithub} className="text-gray-800 hover:text-gray-600 text-2xl" />
                 <p className="text-2xl">haard18</p>
               </a>
               <a href="https://www.linkedin.com/in/haard-solanki-66084826a/" className="flex items-center gap-1" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} className="text-blue-700 hover:text-blue-900 text-5xl" />
+                <FontAwesomeIcon icon={faLinkedin} className="text-blue-700 hover:text-blue-900 text-2xl" />
                 <p className="text-2xl">haard-solanki</p>
               </a>
               <a href="https://instagram.com/haard.solanki" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faInstagram} className="text-pink-500 hover:text-pink-700 text-5xl" />
+                <FontAwesomeIcon icon={faInstagram} className="text-pink-500 hover:text-pink-700 text-2xl" />
                 <p className="text-2xl">haard.solanki</p>
               </a>
               <a href="https://www.youtube.com/@haardsolanki9398" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faYoutube} className=" text-red-700 hover:text-blue-700 text-5xl" />
+                <FontAwesomeIcon icon={faYoutube} className=" text-red-700 hover:text-blue-700 text-2xl" />
                 <p className="text-2xl">solanki_haard</p>
               </a>
 

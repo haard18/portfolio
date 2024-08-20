@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'; // If you're using React Router for nav
 
 const Navbar = () => {
   return (
-    <nav className="bg-white text-black border text-center tracking-widest border-gray-300 justify-center rounded-full shadow-md max-w-xs mx-auto flex items-center p-2">
-      <ul className="flex space-x-4">
+    <nav className="bg-white text-black border border-gray-300 rounded-full shadow-md max-w-md mx-auto flex items-center p-2">
+      <ul className="flex space-x-6"> {/* Adjusted spacing */}
         <li>
           <Link to="/" className="hover:text-gray-600 transition-colors text-sm font-medium">Home</Link>
         </li>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <Link to="/contact" className="hover:text-gray-600 transition-colors text-sm font-medium">Achievements</Link>
         </li>
         <li>
-          <Link to="/resume" className="hover:text-gray-600 transition-colors text-sm font-medium">Hire Me</Link>
+          <Link to="/resume" className="hover:text-gray-600 transition-colors text-sm font-medium">Resume</Link>
         </li>
       </ul>
     </nav>
