@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import haard from '../data/images/haard3.png'
 import Navbar from "@/components/Navbar";
+
 const Home = () => {
   const [devMode, setDevMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+    <div className="flex flex-col min-h-screen" style={{ fontFamily: "'Orbitron', sans-serif" }}>
       {isLoading ? (
         <div className="flex flex-col justify-center items-center h-screen">
           <div className="w-64 h-2 border-2 bg-gray-300 mb-4">
@@ -51,44 +52,45 @@ const Home = () => {
         </div>
       ) : (
         !devMode ? (
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-full">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex flex-col">
             <Navbar />
-            <div className="flex text-9xl p-7">
-              Hello!<br />
-              Haard Here!
+            <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
+              <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-6">
+                Hello!<br />
+                Haard Here!
+              </h1>
+              <div className="text-2xl pt-5">
+                Ready To Switch On Dev Mode?
+              </div>
+              <div className="mt-4">
+                <Switch id="Dev-Mode" onClick={handleSwitchChange} />
+                <label htmlFor="Dev-Mode" className="text-lg mt-2 block">Go Dev Mode</label>
+              </div>
             </div>
-            <br />
-            <div className="flex right-0 top-0 bottom-0 mr-5 absolute">
-              <img src={haard} alt="Haard" />
+            <div className="absolute bottom-0 right-0 mr-5">
+              <img src={haard} alt="Haard" className="hidden md:block w-3/4 h-auto" />
             </div>
-            <div className="text-2xl pt-5 flex flex-col p-7">
-              Ready To Switch On Dev Mode?
-              <Switch id="Dev-Mode" onClick={handleSwitchChange} />
-              <label htmlFor="Dev-Mode">Go Dev Mode</label>
-            </div>
-            <div className="flex flex-col gap-7 p-7 mt-3">
-
+            <div className="flex flex-col gap-4 p-7">
               <a href="https://x.com/solanki_haard" target="_blank" className="flex gap-1 items-center" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faXTwitter} className="text-blue-500 hover:text-blue-700 text-2xl" />
-                <p className="text-2xl">solanki_haard</p>
+                <p className="text-xl">solanki_haard</p>
               </a>
               <a href="https://github.com/haard18" target="_blank" className="flex items-center gap-1" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faGithub} className="text-gray-800 hover:text-gray-600 text-2xl" />
-                <p className="text-2xl">haard18</p>
+                <p className="text-xl">haard18</p>
               </a>
               <a href="https://www.linkedin.com/in/haard-solanki-66084826a/" className="flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faLinkedin} className="text-blue-700 hover:text-blue-900 text-2xl" />
-                <p className="text-2xl">haard-solanki</p>
+                <p className="text-xl">haard-solanki</p>
               </a>
               <a href="https://instagram.com/haard.solanki" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faInstagram} className="text-pink-500 hover:text-pink-700 text-2xl" />
-                <p className="text-2xl">haard.solanki</p>
+                <p className="text-xl">haard.solanki</p>
               </a>
               <a href="https://www.youtube.com/@haardsolanki9398" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faYoutube} className=" text-red-700 hover:text-blue-700 text-2xl" />
-                <p className="text-2xl">solanki_haard</p>
+                <FontAwesomeIcon icon={faYoutube} className="text-red-700 hover:text-blue-700 text-2xl" />
+                <p className="text-xl">solanki_haard</p>
               </a>
-
             </div>
           </div>
         ) : (
@@ -100,4 +102,3 @@ const Home = () => {
 };
 
 export default Home;
-//projects/writings/achievements/timeline
