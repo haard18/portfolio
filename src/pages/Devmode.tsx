@@ -87,6 +87,11 @@ const Devmode: React.FC = () => {
         setBackToHome(true); // Switch back to Home
         output = '';
         break;
+      case '/shikha':
+        setIsLoading('Sorting out Love');
+        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
+        output = 'Haard Loves Shikha 3000';
+        break
       default:
         setIsLoading('Processing command');
         await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate processing time
