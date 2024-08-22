@@ -42,9 +42,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+    <div className="flex flex-col min-h-screen overflow-hidden" style={{ fontFamily: "'Orbitron', sans-serif" }}>
       {isLoading ? (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div className="flex flex-col justify-center items-center h-screen overflow-hidden">
           <div className="w-64 h-2 border-2 bg-gray-300 mb-4">
             <div className="h-full bg-green-500 animate-loading-bar"></div>
           </div>
@@ -52,19 +52,20 @@ const Home = () => {
         </div>
       ) : (
         !devMode ? (
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex flex-col">
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex flex-col overflow-hidden">
             <Navbar />
             <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
               <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-6">
                 Hello!<br />
                 Haard Here!
               </h1>
+                <p className="text-3xl">Full Stack Developer to web3 enthusiast</p>
               <div className="text-2xl pt-5">
-                Ready To Switch On Dev Mode?
+                Get into the Rabit Hole!
               </div>
               <div className="mt-4">
                 <Switch id="Dev-Mode" onClick={handleSwitchChange} />
-                <label htmlFor="Dev-Mode" className="text-lg mt-2 block">Go Dev Mode</label>
+                <label htmlFor="Dev-Mode" className="text-lg mt-2 block">Hack the web</label>
               </div>
             </div>
             <div className="absolute bottom-0 right-0 mr-5">

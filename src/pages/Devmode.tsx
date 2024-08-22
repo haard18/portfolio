@@ -9,7 +9,7 @@ Available commands:
   /skills     - List all skills
   /about      - Show information about me
   /github     - Show my GitHub profile link
-  /clear      - Clear the terminal
+  clear      - Clear the terminal
   /back       - Return to the Home screen
 
 Type a command and press Enter to execute it.
