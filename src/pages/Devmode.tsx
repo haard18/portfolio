@@ -41,7 +41,7 @@ const Devmode: React.FC = () => {
       case '/projects':
         setIsLoading('Loading projects...');
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate loading time
-
+  
         output = (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {projects.map((project) => (
@@ -91,14 +91,22 @@ const Devmode: React.FC = () => {
         setIsLoading('Sorting out Love');
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
         output = 'Haard Loves Shikha 3000';
-        break
+        break;
+      case 'ls':
+        // Simulated directory listing
+        output = (
+          <div className="whitespace-pre-wrap break-words">
+            {`projects  skills  about  github`}
+          </div>
+        );
+        break;
       default:
         setIsLoading('Processing command');
         await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate processing time
         output = 'Command not found';
         break;
     }
-
+  
     setHistory([...history, { command: input, output }]);
     setInput('');
     setIsLoading(null); // Stop loader
@@ -128,7 +136,7 @@ const Devmode: React.FC = () => {
         {history.map((entry, index) => (
           <div key={index}>
             <div className="text-green-500" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-              $ {entry.command}
+              hardy $ {entry.command}
             </div>
             <pre className="whitespace-pre-wrap break-words" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {entry.output}
@@ -143,7 +151,7 @@ const Devmode: React.FC = () => {
         </div>
       ) : (
         <div>
-          $ <input
+          hardy$ <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}

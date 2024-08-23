@@ -59,7 +59,7 @@ const Home = () => {
                 Hello!<br />
                 Haard Here!
               </h1>
-                <p className="text-3xl">Full Stack Developer to web3 enthusiast</p>
+              <p className="text-3xl">Full Stack Developer to web3 enthusiast</p>
               <div className="text-2xl pt-5">
                 Get into the Rabit Hole!
               </div>
@@ -68,9 +68,14 @@ const Home = () => {
                 <label htmlFor="Dev-Mode" className="text-lg mt-2 block">Hack the web</label>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0 mr-5">
-              <img src={haard} alt="Haard" className="hidden md:block w-3/4 h-auto" />
+            <div className="absolute bottom-0 right-0">
+              <img
+                src={haard}
+                alt="Haard"
+                className="hidden sm:hidden md:block md:w-2/5 lg:w-3/4 h-auto"
+              />
             </div>
+
             <div className="flex flex-col gap-4 p-7">
               <a href="https://x.com/solanki_haard" target="_blank" className="flex gap-1 items-center" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faXTwitter} className="text-blue-500 hover:text-blue-700 text-2xl" />
