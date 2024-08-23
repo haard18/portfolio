@@ -22,7 +22,7 @@ const getMedalEmoji = (achievement: string) => {
 const Achievements: React.FC = () => {
     return (
         <>
-            <BackButton />
+            <BackButton mode='light' />
             <div className='min-h-screen flex flex-col  bg-gradient-to-r from-blue-50 to-blue-100 py-12'>
                 <div className="bg-gradient-to-r from-blue-50 to-blue-100 max-w-5xl mx-auto p-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     <h2 className="text-3xl font-bold text-center my-8">Achievements ({achievements.length})</h2>
