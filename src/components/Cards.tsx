@@ -2,7 +2,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import sam from '../data/images/sam.png';
+import sentio from '../data/images/sentio.png';
 import churn from '../data/images/churn.png';
 import dumdum from '../data/images/dumdum.png';
 import opus from '../data/images/opus.png';
@@ -34,7 +34,7 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <>
+    <div className="tracking-wider" style={{ fontFamily: "'Orbitron', sans-serif" }}>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -77,7 +77,7 @@ export function ExpandableCardDemo() {
                 <img
                   width={200}
                   height={200}
-                  src={active.src.dumdum || active.src.sam || active.src.churn || active.src.opus}
+                  src={active.src.dumdum || active.src.sentio || active.src.churn || active.src.opus}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
@@ -140,7 +140,7 @@ export function ExpandableCardDemo() {
                 <img
                   width={100}
                   height={100}
-                  src={card.src.dumdum || card.src.sam || card.src.churn || card.src.opus}
+                  src={card.src.dumdum || card.src.sentio || card.src.churn || card.src.opus}
                   alt={card.title}
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
@@ -169,7 +169,7 @@ export function ExpandableCardDemo() {
           </motion.div>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
@@ -224,18 +224,18 @@ const cards = [
     },
   },
   {
-    description: "SAM-SUPPORT",
-    title: "End to End Support Mechanism for Arweave and AO processes",
-    src: {sam},
+    description: "Sentio",
+    title: "An End to End Pipeline with Security, Audit and Monitoring",
+    src: {sentio},
     ctaText: "Details",
-    ctaLink: "https://sam-support.arweave.net",
+    ctaLink: "https://sentio-app.ar-io.dev",
     content: () => {
       return (
         <p>
-          SAM-SUPPORT provides an end-to-end support mechanism for Arweave and AO processes. 
-          It ensures smooth operations and efficient handling of support requests.
+          Sentio provides an end-to-end Security mechanism for Arweave and AO processes. 
+          It ensures Audit reports and efficient monitoring of User Processes.
           <br /> <br /> 
-          Check out the project on <a href="https://github.com/krishvsoni/sam" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          Check out the project on <a href="https://github.com/haard18/sentio" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       );
     },
@@ -245,7 +245,7 @@ const cards = [
     title: "Customer Churn Analyzer for Telecom Industry",
     src: {churn},
     ctaText: "Details",
-    ctaLink: "https://churn-frontend-rho.vercel.app/",
+    ctaLink: "https://churn-frontend-six.vercel.app",
     content: () => {
       return (
         <p>

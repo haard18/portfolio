@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white text-black border border-gray-300 rounded-full shadow-md max-w-full mx-auto flex items-center p-3 lg:p-4">
+    <nav className="bg-white text-black border border-gray-300 rounded-full shadow-md max-w-full mx-auto flex items-center p-3 lg:p-4 mb-10 mt-2">
       <ul className="flex justify-center w-full px-5 lg:space-x-8 space-x-4"> 
-        {/* Flexbox to make space between items and ensure mobile responsiveness */}
+        
         <li>
           <Link to="/" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">Home</Link>
         </li>

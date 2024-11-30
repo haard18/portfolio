@@ -1,11 +1,13 @@
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 import { useState, useEffect } from "react";
 import Devmode from "./Devmode";
 import './Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import haard from '../data/images/haard3.png'
+import { faGithub, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import haard from '../data/images/hardy.png'
 import Navbar from "@/components/Navbar";
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
 
 const Home = () => {
   const [devMode, setDevMode] = useState(false);
@@ -53,7 +55,10 @@ const Home = () => {
       ) : (
         !devMode ? (
           <div className="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex flex-col overflow-hidden">
+
+
             <Navbar />
+
             <div className="flex-grow flex flex-col items-center justify-center text-center px-4">
               <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-6">
                 Hello!<br />
@@ -64,15 +69,16 @@ const Home = () => {
                 Get into the Rabit Hole!
               </div>
               <div className="mt-4">
-                <Switch id="Dev-Mode" onClick={handleSwitchChange} />
-                <label htmlFor="Dev-Mode" className="text-lg mt-2 block">Hack the web</label>
+                
+                <AwesomeButton onPress={handleSwitchChange} type="secondary">Hack the web</AwesomeButton>
+                
               </div>
             </div>
-            <div className="absolute bottom-0 right-0">
+            <div className="absolute pl-20 bottom-0 right-0">
               <img
                 src={haard}
                 alt="Haard"
-                className="hidden sm:hidden md:block md:w-2/5 lg:w-3/4 h-auto"
+                className="hidden sm:hidden md:block md:w-4/5 lg:w-4/5 h-auto"
               />
             </div>
 
@@ -89,10 +95,7 @@ const Home = () => {
                 <FontAwesomeIcon icon={faLinkedin} className="text-blue-700 hover:text-blue-900 text-2xl" />
                 <p className="text-xl">haard-solanki</p>
               </a>
-              <a href="https://instagram.com/haard.solanki" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faInstagram} className="text-pink-500 hover:text-pink-700 text-2xl" />
-                <p className="text-xl">haard.solanki</p>
-              </a>
+
               <a href="https://www.youtube.com/@haardsolanki9398" className="flex gap-1 items-center" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faYoutube} className="text-red-700 hover:text-blue-700 text-2xl" />
                 <p className="text-xl">solanki_haard</p>

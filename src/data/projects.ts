@@ -1,8 +1,15 @@
 import dumdum from '../data/images/dumdum.png'
-import sam from '../data/images/sam.png'
+import sentio from '../data/images/sentio.png'
 import churn from '../data/images/churn.png'
 import opus from '../data/images/opus.png'
 export const projects = [
+    {
+        "name": "SENTIO",
+        "description": "An End to End Pipeline with Security, Audit and Monitoring",
+        "url": "https://sentio-app.ar-io.dev",
+        "github": "https://github.com/haard18/sentio",
+        "image": sentio
+    },
     {
         "name": "DumDumDeploy",
         "description": "A simple deployment tool for deploying your projects on Arweave",
@@ -10,13 +17,7 @@ export const projects = [
         "github": "https://github.com/ankushkun/dumdumdeploy",
         "image": dumdum
     },
-    {
-        "name": "SAM-SUPPORT",
-        "description": "End to End Support Mechanism for Arweave and AO processes",
-        "url": "https://sam-support.arweave.net",
-        "github": "https://github.com/krishvsoni/sam",
-        "image":sam
-    },
+
     {
         "name": "Churn-O-Analyzer",
         "description": "Customer Churn Analyzer for Telecom Industry",

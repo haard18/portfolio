@@ -29,6 +29,18 @@ const achievements = [
         "Date": "July 2024",
         "Organization": "Arweave"
     },
+    {
+        "achievement": "Attained $5000 grant",
+        "event": "Arweave India Launchpad",
+        "Date": "October 2024",
+        "Organization": "Arweave"
+    },
+    {
+        "achievement":"Presented in Demoday",
+        "event":" Arweave India Demoday",
+        "Date":"November 2024",
+        "Organization":"Arweave"
+    }
 ];
 
 export default achievements;
