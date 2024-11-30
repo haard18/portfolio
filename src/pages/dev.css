@@ -1,0 +1,10 @@
+.cursor-blink {
+  caret-color: green;  /* Set the caret (cursor) color */
+  animation: blinkCaret 1s step-end infinite;  /* Blink effect */
+}
+
+@keyframes blinkCaret {
+  50% {
+    opacity: 0;
+  }
+}

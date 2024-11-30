@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getGithubStats } from '@/data/github';
 import Home from './Home'; // Import Home component to switch back
 import { projects } from '@/data/projects'; // Import your projects data
+import './dev.css';
 
 const guideText = `
 Available commands:
@@ -87,10 +88,15 @@ const Devmode: React.FC = () => {
         setBackToHome(true); // Switch back to Home
         output = '';
         break;
-      case '/shikha':
+      case '/shikhaaa':
         setIsLoading('Sorting out Love');
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
         output = 'Haard Loves Shikha 3000';
+        break;
+      case '/dharaitm':
+        setIsLoading('I kinda want you');
+        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
+        output="Do you want me too?";
         break;
       case 'ls':
         // Simulated directory listing
@@ -118,12 +124,15 @@ const Devmode: React.FC = () => {
     }
   };
 
-  const skills = ["React", "Node.js", "TypeScript", "Tailwind CSS"];
+  const skills = ["MERN", "Solidity", "Web3", "AI", "ML","C++","Problem Solving"];
   const about = "I'm a web developer with experience in web3 and AI";
 
   if (backToHome) {
     return <Home />; // Return to Home component
   }
+
+  // Determine whether to apply the blinking cursor style
+  const cursorClass = input === '' ? 'cursor-blink' : '';
 
   return (
     <div className="bg-black text-green-500 p-10 font-mono h-screen overflow-y-auto tracking-widest" style={{ fontFamily: "'Orbitron', sans-serif" }}>
@@ -156,7 +165,7 @@ const Devmode: React.FC = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="bg-transparent text-green-500 border-none outline-none w-90"
+            className={`bg-transparent text-green-500 border-none outline-none w-90 ${cursorClass}`}
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
         </div>

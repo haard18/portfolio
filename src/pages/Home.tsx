@@ -28,7 +28,7 @@ const Home = () => {
       const phraseInterval = setInterval(() => {
         setLoadingPhrase(loadingPhrases[phraseIndex]);
         phraseIndex = (phraseIndex + 1) % loadingPhrases.length;
-      }, 1000);
+      }, 400);
 
       return () => clearInterval(phraseInterval);
     }
@@ -40,7 +40,7 @@ const Home = () => {
       setDevMode(!devMode);
       setIsLoading(false);
       console.log("Switch toggled:", !devMode);
-    }, 5000);
+    }, 2000);
   };
 
   return (
