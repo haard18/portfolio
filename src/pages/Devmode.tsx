@@ -93,7 +93,7 @@ const Devmode: React.FC = () => {
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
         output = 'Haard Loves Shikha 3000';
         break;
-      case '/dharaitm':
+      case '/Dhara':
         setIsLoading('I kinda want you');
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
         output="Do you want me too?";
