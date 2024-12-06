@@ -33,7 +33,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file }) => {
       if (!pdfDocument || !canvasRef.current) return;
 
       const page = await pdfDocument.getPage(pageNumber);
-      const viewport = page.getViewport({ scale: 2.5 }); // Adjust scale as needed
+      const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale as needed
 
       const canvas = canvasRef.current;
       const context = canvas.getContext("2d");
