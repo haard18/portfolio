@@ -1,6 +1,6 @@
 import React from "react";
 import PDFViewer from "../components/Pdfviewer";
-import resume from "../data/resume_template.pdf";
+import resume from "../data/HaardSolanki.pdf";
 import BackButton from "../components/backButton";
 import { AwesomeButton } from "react-awesome-button";
 
