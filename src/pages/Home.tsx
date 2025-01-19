@@ -64,7 +64,7 @@ const Home = () => {
                 Hello!<br />
                 Haard Here!
               </h1>
-              <p className="text-3xl">Full Stack Developer to web3 enthusiast</p>
+              <p className="text-3xl">Full Stack Developer turned WEB3 BUIDLer</p>
               <div className="text-2xl pt-5">
                 Get into the Rabit Hole!
               </div>
