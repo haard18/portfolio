@@ -65,6 +65,7 @@ const Home = () => {
                 Haard Here!
               </h1>
               <p className="text-3xl">Full Stack Developer turned WEB3 BUIDLer</p>
+              <p className="text-2xl">Remote Software Developer at Goldpesa</p>
               <div className="text-2xl pt-5">
                 Get into the Rabit Hole!
               </div>
