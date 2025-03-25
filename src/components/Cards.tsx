@@ -2,11 +2,13 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import sentio from '../data/images/sentio.png';
-import churn from '../data/images/churn.png';
-import dumdum from '../data/images/dumdum.png';
-import opus from '../data/images/opus.png';
+import sentio from "../data/images/sentio.png";
 
+import dumdum from "../data/images/dumdum.png";
+import opus from "../data/images/opus.png";
+import uniswap from "../data/images/uniswap.png"
+import evencio from "../data/images/evencio.png"
+import cric from "../data/images/cric.png"
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
@@ -34,7 +36,10 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="tracking-wider" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+    <div
+      className="tracking-wider"
+      style={{ fontFamily: "'Orbitron', sans-serif" }}
+    >
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -77,7 +82,15 @@ export function ExpandableCardDemo() {
                 <img
                   width={200}
                   height={200}
-                  src={active.src.dumdum || active.src.sentio || active.src.churn || active.src.opus}
+                  src={
+                    active.src.dumdum ||
+                    active.src.sentio ||
+                    // active.src.churn ||
+                    active.src.opus ||
+                    active.src.uniswap||
+                    active.src.evencio||
+                    active.src.cric
+                  }
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
@@ -140,7 +153,15 @@ export function ExpandableCardDemo() {
                 <img
                   width={100}
                   height={100}
-                  src={card.src.dumdum || card.src.sentio || card.src.churn || card.src.opus}
+                  src={
+                    card.src.dumdum ||
+                    card.src.sentio ||
+                    // card.src.churn ||
+                    card.src.opus ||
+                    card.src.uniswap||
+                    card.src.evencio||
+                    card.src.cric
+                  }
                   alt={card.title}
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
@@ -209,16 +230,25 @@ const cards = [
   {
     description: "DumDumDeploy",
     title: "A simple deployment tool for deploying your projects on Arweave",
-    src: {dumdum},
+    src: { dumdum },
     ctaText: "Details",
     ctaLink: "https://dumdumdeploy.vercel.app",
     content: () => {
       return (
         <p>
-          DumDumDeploy is a simple deployment tool designed to help you deploy your projects on Arweave. 
-          It provides an easy-to-use interface and seamless integration with your existing workflow. 
-          <br /> <br /> 
-          Check out the project on <a href="https://github.com/ankushkun/dumdumdeploy" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          DumDumDeploy is a simple deployment tool designed to help you deploy
+          your projects on Arweave. It provides an easy-to-use interface and
+          seamless integration with your existing workflow.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/ankushkun/dumdumdeploy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
         </p>
       );
     },
@@ -226,52 +256,130 @@ const cards = [
   {
     description: "Sentio",
     title: "An End to End Pipeline with Security, Audit and Monitoring",
-    src: {sentio},
+    src: { sentio },
     ctaText: "Details",
     ctaLink: "https://sentio-app.ar-io.dev",
     content: () => {
       return (
         <p>
-          Sentio provides an end-to-end Security mechanism for Arweave and AO processes. 
-          It ensures Audit reports and efficient monitoring of User Processes.
-          <br /> <br /> 
-          Check out the project on <a href="https://github.com/haard18/sentio" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          Sentio provides an end-to-end Security mechanism for Arweave and AO
+          processes. It ensures Audit reports and efficient monitoring of User
+          Processes.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/haard18/sentio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
         </p>
       );
     },
   },
-  {
-    description: "Churn-O-Analyzer",
-    title: "Customer Churn Analyzer for Telecom Industry",
-    src: {churn},
-    ctaText: "Details",
-    ctaLink: "https://churn-frontend-six.vercel.app",
-    content: () => {
-      return (
-        <p>
-          Churn-O-Analyzer is a customer churn analyzer designed for the telecom industry. 
-          It helps in identifying potential churn risks and provides insights to retain customers.
-          <br /> <br /> 
-          Check out the project on <a href="https://github.com/haard18/churn-frontend" target="_blank" rel="noopener noreferrer">GitHub</a>.
-        </p>
-      );
-    },
-  },
+  
   {
     description: "Opus Stellar",
     title: "Buy your own piece of LAND in your favourite Metaverse",
-    src:{opus},
+    src: { opus },
     ctaText: "Details",
     ctaLink: "https://devfolio.co/projects/opus-stellar-70b7",
     content: () => {
       return (
         <p>
-          Opus Stellar allows you to buy your own piece of LAND in your favourite Metaverse. 
-          It provides a seamless experience for exploring and purchasing virtual real estate.
-          <br /> <br /> 
-          Check out the project on <a href="https://github.com/OctoTechHub/Opus" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          Opus Stellar allows you to buy your own piece of LAND in your
+          favourite Metaverse. It provides a seamless experience for exploring
+          and purchasing virtual real estate.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/OctoTechHub/Opus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
         </p>
       );
     },
   },
+  {
+    description: "Learning Uniswap v4",
+    title: "The latest version of Uniswap",
+    src: { uniswap },
+    ctaText: "Details",
+    ctaLink: "https://github.com/haard18/uniswap-v4",
+    content: () => {
+      return (
+        <p>
+          Learning Uniswap v4 is a project that aims to help developers learn
+          about the latest version of Uniswap. It provides a comprehensive
+          overview of the protocol and its features.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/haard18/uniswap-v4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+      );
+    },
+  },
+  {
+    description:"The Future of Ticketing: Transparent, Secure, and Fan-First",
+    title:"Evencio",
+    src:{evencio},
+    ctaText:"Details",
+    ctaLink:"https://github.com/OctoTechHub/Illuminati-Hackathon",
+    content:()=>{
+      return (
+        <p>
+          Evencio is the future of ticketing. It is a transparent, secure, and fan-first ticketing platform that aims to revolutionize the ticketing industry.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/OctoTechHub/Illuminati-Hackathon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+      )
+    }
+
+  },
+  {
+    description:"CrickTrade allows users to buy and sell virtual stocks using Aptos of their favorite cricket players, based on their real-time performance on the field.",
+    title:"CrickTrade",
+    src:{cric},
+    ctaText:"Details",
+    ctaLink:"https://www.cricktrade.co/",
+    content:()=>{
+      return (
+        <p>
+          CrickTrade allows users to buy and sell virtual stocks using Aptos of their favorite cricket players, based on their real-time performance on the field.
+          <br /> <br />
+          Check out the project on{" "}
+          <a
+            href="https://github.com/OctoTechHub/AptosArena"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+      )
+    }
+  }
+
 ];

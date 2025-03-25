@@ -2,6 +2,9 @@ import dumdum from '../data/images/dumdum.png'
 import sentio from '../data/images/sentio.png'
 import churn from '../data/images/churn.png'
 import opus from '../data/images/opus.png'
+import evencio from '../data/images/evencio.png'
+import uniswap from '../data/images/uniswap.png'
+import cric from '../data/images/cric.png'
 export const projects = [
     {
         "name": "SENTIO",
@@ -31,5 +34,26 @@ export const projects = [
         "url": "https://devfolio.co/projects/opus-stellar-70b7",
         "github": "https://github.com/OctoTechHub/Opus",
         "image": opus
+    },
+    {
+        name:"Learning Uniswap v4",
+        description:"Learning Uniswap v4",
+        url:"https://docs.uniswap.org/contracts/v4/overview",
+        github:"https://github.com/haard18/uniswap-v4",
+        image:uniswap
+    },
+    {
+        name:"Evencio",
+        description:"The Future of Ticketing: Transparent, Secure, and Fan-First",
+        url:"https://github.com/OctoTechHub/Illuminati-Hackathon",
+        github:"https://github.com/OctoTechHub/Illuminati-Hackathon",
+       image:evencio 
+    },
+    {
+        name:"CrickTrade",
+        description:" CrickTrade allows users to buy and sell virtual stocks using Aptos of their favorite cricket players, based on their real-time performance on the field.",
+        url:"https://www.cricktrade.co/",
+        github:"https://github.com/OctoTechHub/AptosArena",
+        Image:cric
     }
 ]
