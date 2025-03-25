@@ -11,7 +11,8 @@ const getMedalEmoji = (achievement: string) => {
         return '🥈'; // Silver Medal for second place
     } else if (lowerAchievement.includes('third')) {
         return '🥉'; // Bronze Medal for third place
-    } else if (lowerAchievement.includes('research' || 'paper')) {
+
+    } else if (lowerAchievement.includes('research' )) {
         return '🔬'; // Research Paper
     }
     else {
