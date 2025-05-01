@@ -11,7 +11,7 @@ Available commands:
   /about      - Show information about me
   /github     - Show my GitHub profile link
   clear      - Clear the terminal
-  /classified - Access classified files
+  /report - Access classified files
   /back       - Return to the Home screen
 
 Type a command and press Enter to execute it.
