@@ -1,51 +1,69 @@
 const achievements = [
     {
-        "achievement":"first",
-        "event":"ITM Hackathon",
-        "Date":"February 2025",
-        "Organization":"ITM University"
+        achievement: "First Place",
+        event: "Local Governance",
+        Date: "January 2024",
+        Organization: "ITM University",
     },
     {
-        "achievement":"Presented in Demoday",
-        "event":" Arweave India Demoday",
-        "Date":"November 2024",
-        "Organization":"Arweave"
+        achievement: "Research Paper Presentation",
+        event: "AI Fusion Conference",
+        Date: "February 2024",
+        Organization: "ITM University",
     },
     {
-        "achievement": "Attained $5000 grant",
-        "event": "Arweave India Launchpad",
-        "Date": "October 2024",
-        "Organization": "Arweave"
+        achievement: "Winner – $2000 Bounty",
+        event: "Illuminati Hackathon",
+        Date: "April 2024",
+        Organization: "ITM University",
     },
     {
-        "achievement": "Among Top 30 Hackers",
-        "event": "Arweave HackerHouse-II",
-        "Date": "July 2024",
-        "Organization": "Arweave"
+        achievement: "Second Place",
+        event: "Stellar Indiathon",
+        Date: "May 2024",
+        Organization: "Stellar Networks",
     },
     {
-        "achievement": "third",
-        "event": "Weavers Raid-III",
-        "Date": "August 2024",
-        "Organization": "Arweave"
+        achievement: "Top 30 Hacker Selection",
+        event: "Arweave HackerHouse-II",
+        Date: "July 2024",
+        Organization: "Arweave",
     },
     {
-        "achievement": "second",
-        "event": "Stellar Indiathon",
-        "Date": "May 2024",
-        "Organization": "Stellar Networks"
+        achievement: "Third Place",
+        event: "Weavers Raid-III",
+        Date: "August 2024",
+        Organization: "Arweave",
     },
     {
-        "achievement": "research paper",
-        "event": "AI Fusion Conference",
-        "Date": "February 2024",
-        "Organization": "ITM University"
+        achievement: "Attained $5000 Grant",
+        event: "Arweave India Launchpad",
+        Date: "October 2024",
+        Organization: "Arweave",
     },
     {
-        "achievement": "first",
-        "event": "Local Governance",
-        "Date": "January 2024",
-        "Organization": "ITM University"
+        achievement: "Presented in Demoday",
+        event: "Arweave India Demoday",
+        Date: "November 2024",
+        Organization: "Arweave",
+    },
+    {
+        achievement: "Built Onchain Invoicing System",
+        event: "Internal Production Deployment",
+        Date: "May 2025",
+        Organization: "GoldPesa",
+    },
+    {
+        achievement: "First Place",
+        event: "ITM Hackathon",
+        Date: "February 2025",
+        Organization: "ITM University",
+    },
+    {
+        achievement: "Core Dev Recognition",
+        event: "GoldPesa Ecosystem Launch",
+        Date: "June 2025",
+        Organization: "GoldPesa / WhiteBeard Trading",
     }
 ];
 

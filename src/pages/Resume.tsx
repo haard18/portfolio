@@ -1,6 +1,6 @@
 import React from "react";
 import PDFViewer from "../components/Pdfviewer";
-import resume from "../data/new_resume.pdf";
+import resume from "../data/resume.pdf"; // Adjust the path as necessary
 import BackButton from "../components/backButton";
 import { AwesomeButton } from "react-awesome-button";
 
