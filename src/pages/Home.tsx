@@ -68,7 +68,7 @@ const Home = () => {
             <h1 className="text-6xl sm:text-8xl lg:text-9xl font-bold mb-6">
               hello!
               <br />
-              haard Here!
+              haard here!
             </h1>
             <p className="text-3xl">
               full-stack engineer diving deep into web3 infrastructure
