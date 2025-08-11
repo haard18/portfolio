@@ -112,11 +112,7 @@ const Devmode: React.FC = () => {
         setBackToHome(true); // Switch back to Home
         output = "";
         break;
-      case "/shikhaaa":
-        setIsLoading("Sorting out Love");
-        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate installation time
-        output = "Haard Loves Shikha 3000";
-        break;
+
       case "/report":
         setIsLoading("Accessing classified files");
         await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate red tape
