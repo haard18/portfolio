@@ -1,34 +1,51 @@
-import React from "react";
+import Container from "@/components/common/Container";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import PDFViewer from "../components/Pdfviewer";
-import resume from "../data/Haard Solanki Resume final.pdf"; // Adjust the path as necessary
-import BackButton from "../components/backButton";
-import { AwesomeButton } from "react-awesome-button";
+import resume from "../data/Haard Solanki Resume final.pdf";
+import { Download } from "lucide-react";
 
-const Resume: React.FC = () => {
+const Resume = () => {
   const handleDownload = () => {
-    // Create an anchor element
     const link = document.createElement("a");
-    link.href = resume; // Set the file URL
-    link.download = "HaardSolanki.pdf"; // Set the desired download file name
-    link.click(); // Programmatically trigger the download
+    link.href = resume;
+    link.download = "HaardSolanki.pdf";
+    link.click();
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-6 p-4">
-      <BackButton mode="light" />
-      <PDFViewer file={resume} />
-      {/* Download Button */}
-      {/* <a
-        href={resume}
-        download="Haard_resume.pdf"
-        className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
-      >
-        Download Resume
-      </a> */}
-      <AwesomeButton onPress={handleDownload } type="secondary">Download Resume</AwesomeButton>
+    <div className="min-h-screen">
+      <Container className="py-16">
+        <div className="space-y-8">
+          {/* Header */}
+          <div className="space-y-4 text-center">
+            <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+              Resume
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              My professional experience and qualifications
+            </p>
+          </div>
 
+          <Separator />
+
+          {/* Download Button */}
+          <div className="flex justify-center">
+            <Button onClick={handleDownload} size="lg">
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </Button>
+          </div>
+
+          {/* PDF Viewer */}
+          <div className="rounded-lg border bg-card p-4">
+            <PDFViewer file={resume} />
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };
 
 export default Resume;
+

@@ -1,28 +1,50 @@
 import { Link } from 'react-router-dom';
+import Container from './common/Container';
+import { ThemeToggle } from './common/ThemeToggle';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white text-black border border-gray-300 rounded-full shadow-md max-w-full mx-auto flex items-center p-3 lg:p-4 mb-10 mt-2">
-      <ul className="flex justify-center w-full px-5 lg:space-x-8 space-x-4"> 
-        
-        <li>
-          <Link to="/" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">home</Link>
-        </li>
-        <li>
-          <Link to="/about" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">about</Link>
-        </li>
-        <li>
-          <Link to="/projects" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">projects</Link>
-        </li>
-        <li>
-          <Link to="/achievements" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">achievements</Link>
-        </li>
-        <li>
-          <Link to="/resume" className="hover:text-gray-600 transition-colors text-xs lg:text-sm font-medium">resume</Link>
-        </li>
-      </ul>
-    </nav>
+    <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-sm">
+      <div className="flex items-center justify-between px-6">
+        <div className="flex items-baseline gap-4">
+          <Link to="/">
+            <div className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300 flex items-center justify-center font-bold text-xl">
+              H
+            </div>
+          </Link>
+          <div className="flex items-center justify-center gap-4">
+            <Link
+              to="/"
+              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+            >
+              About
+            </Link>
+            <Link
+              to="/projects"
+              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+            >
+              Projects
+            </Link>
+            <Link
+              to="/resume"
+              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+            >
+              Resume
+            </Link>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+        </div>
+      </div>
+    </Container>
   );
-}
+};
 
 export default Navbar;

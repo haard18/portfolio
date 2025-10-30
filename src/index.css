@@ -2,3 +2,297 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Technical Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Light mode - Refined minimal */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 12%;
+    --primary: 220 15% 12%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 10% 95%;
+    --secondary-foreground: 220 15% 12%;
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 188 95% 60%;
+    --accent-foreground: 220 15% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 188 95% 60%;
+    --radius: 0.5rem;
+    
+    /* Neon accents */
+    --neon-cyan: 188 95% 60%;
+    --neon-green: 142 76% 60%;
+    --neon-violet: 271 91% 65%;
+  }
+
+  .dark {
+    /* Dark mode - Deep charcoal with electric accents */
+    --background: 220 18% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 11%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 15% 11%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 220 18% 8%;
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 188 95% 60%;
+    --accent-foreground: 220 18% 8%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 188 95% 60%;
+    
+    /* Neon accents for dark mode */
+    --neon-cyan: 188 95% 60%;
+    --neon-green: 142 76% 60%;
+    --neon-violet: 271 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+}
+
+/* Smooth Page Transitions */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(25px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+              0 0 40px rgba(34, 211, 238, 0.2),
+              0 0 60px rgba(34, 211, 238, 0.1);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5),
+               0 0 20px rgba(34, 211, 238, 0.3),
+               0 0 30px rgba(34, 211, 238, 0.2);
+}
+
+/* Moving Gradient Background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--background)),
+    hsl(var(--secondary)),
+    hsl(var(--background))
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(34, 211, 238, 0.1),
+    rgba(142, 195, 82, 0.1),
+    rgba(168, 85, 247, 0.1)
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+  border-radius: 0.5rem;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+  border: 2px solid hsl(var(--background));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.5);
+}
+
+/* Smooth Hover Transitions */
+.smooth-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Grid Pattern Background */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Accent Colors */
+.text-neon-cyan {
+  color: hsl(var(--neon-cyan));
+}
+
+.text-neon-green {
+  color: hsl(var(--neon-green));
+}
+
+.text-neon-violet {
+  color: hsl(var(--neon-violet));
+}
+
+.bg-neon-cyan {
+  background-color: hsl(var(--neon-cyan));
+}
+
+.bg-neon-green {
+  background-color: hsl(var(--neon-green));
+}
+
+.bg-neon-violet {
+  background-color: hsl(var(--neon-violet));
+}
+
+/* Sophisticated Gradient Text */
+.gradient-text-elegant {
+  background: linear-gradient(135deg, 
+    hsl(var(--neon-cyan)),
+    hsl(var(--neon-violet))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Micro-interaction: Scale on hover */
+.scale-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scale-hover:hover {
+  transform: scale(1.02);
+}
+
+/* Focus Rings with Neon Accent */
+*:focus-visible {
+  outline: 2px solid hsl(var(--neon-cyan));
+  outline-offset: 2px;
+}
+
+
+

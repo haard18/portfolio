@@ -1,75 +1,122 @@
-import BackButton from '@/components/backButton';
-import React from 'react';
+import Container from '@/components/common/Container';
+import { Separator } from '@/components/ui/separator';
+import { aboutConfig } from '@/config/About';
+import { Badge } from '@/components/ui/badge';
 
-const About: React.FC = () => {
-    return (
-        <>
-            <div className='bg-black text-green '>
+const About = () => {
+  return (
+    <div className="min-h-screen">
+      <Container className="py-16">
+        <div className="space-y-8">
+          {/* Header */}
+          <div className="space-y-4 text-center">
+            <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+              About Me
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Get to know me better
+            </p>
+          </div>
 
-                <BackButton mode='dark'/>
-            </div>
-            <div className="bg-black text-green-500 p-10 font-mono h-screen overflow-y-auto tracking-widest" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                <div className="mb-10">
-                    <h1 className="text-4xl text-center font-bold mb-6" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                        About Me
-                    </h1>
-                    <div className="text-center mb-10">
-                        <p className="text-lg text-gray-400">
-                            Hey there! I'm Haard, a passionate web developer with a knack for building modern web applications that merge
-                            Web3 and AI technology. I love crafting seamless user experiences and delving into the world of decentralized
-                            apps.
-                        </p>
-                    </div>
+          <Separator />
+
+          {/* Main Content */}
+          <div className="mx-auto max-w-4xl space-y-12">
+            {/* Introduction */}
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold">Hello!</h2>
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Hey there! I'm Haard, a passionate full-stack web developer with a knack for 
+                  building modern web applications that merge Web3 and AI technology. I love 
+                  crafting seamless user experiences and delving into the world of decentralized apps.
+                </p>
+                <p>
+                  I specialize in full-stack web development, primarily using technologies like 
+                  React, Node.js, TypeScript, and Tailwind CSS. I'm also deeply interested in 
+                  blockchain development and the rapidly evolving world of decentralized applications.
+                </p>
+              </div>
+            </section>
+
+            {/* Skills */}
+            <section className="space-y-4">
+              <h2 className="text-2xl font-semibold">Skills & Technologies</h2>
+              <div className="flex flex-wrap gap-2">
+                {aboutConfig.skills.map((skill, index) => (
+                  <Badge key={index} variant="secondary" className="text-sm px-3 py-1">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </section>
+
+            {/* Interests */}
+            <section className="space-y-6">
+              <h2 className="text-2xl font-semibold">What I Do</h2>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-medium">Web3 & AI Integration</h3>
+                  <p className="text-muted-foreground">
+                    Merging Web3 with AI is one of my passions. I constantly explore new ways 
+                    to integrate decentralized technologies with AI-driven solutions to create 
+                    innovative and secure applications for the future.
+                  </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-transparent p-6 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-semibold text-green-500 mb-4">Web Development</h2>
-                        <p className="text-gray-400">
-                            I specialize in full-stack web development, primarily using technologies like React, Node.js, TypeScript, and
-                            Tailwind CSS. I'm also deeply interested in blockchain development and the rapidly evolving world of
-                            decentralized applications.
-                        </p>
-                    </div>
-                    <div className="bg-transparent p-6 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-semibold text-green-500 mb-4">Web3 & AI Enthusiast</h2>
-                        <p className="text-gray-400">
-                            Merging Web3 with AI is one of my passions. I constantly explore new ways to integrate decentralized
-                            technologies with AI-driven solutions to create innovative and secure applications for the future.
-                        </p>
-                    </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-medium">Open Source</h3>
+                  <p className="text-muted-foreground">
+                    I actively contribute to open-source projects, helping the community and 
+                    staying updated with the latest trends in the tech world. I love collaborating 
+                    with other developers and sharing my knowledge.
+                  </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                    <div className="bg-transparent p-6 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-semibold text-green-500 mb-4">Open Source Contributor</h2>
-                        <p className="text-gray-400">
-                            I actively contribute to open-source projects, helping the community and staying updated with the latest
-                            trends in the tech world. I love collaborating with other developers and sharing my knowledge to create
-                            impactful solutions.
-                        </p>
-                    </div>
-                    <div className="bg-transparent p-6 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-semibold text-green-500 mb-4">Beyond Coding</h2>
-                        <p className="text-gray-400">
-                            When I'm not coding, you can find me exploring new tech gadgets, playing sports, or enjoying a good meal while on a hike
-                            . Reading books is my favourite hobby while I can produce full fledged music in FL Studio . I believe in continuous learning and staying curious about the ever-evolving tech landscape.
-                        </p>
-                    </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-medium">Full Stack Development</h3>
+                  <p className="text-muted-foreground">
+                    Building complete web applications from frontend to backend, with a focus 
+                    on modern frameworks, responsive design, and optimal user experience.
+                  </p>
                 </div>
-
-                <div className="mt-16 text-center">
-                    <p className="text-lg text-gray-400">
-                        Want to collaborate or just say hello? Feel free to{' '}
-                        <a href="https://x.com/solanki_haard" target="_blank" rel="noreferrer" className="text-blue-400 underline">
-                            reach out on Twitter
-                        </a>{' '}
-                        or find me @ <a href="mailto:haardsolanki.itm@gmail.com" className="text-blue-400 underline">haardsolanki.itm@gmail.com</a>!
-                    </p>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-medium">Beyond Coding</h3>
+                  <p className="text-muted-foreground">
+                    When I'm not coding, you can find me exploring new tech gadgets, playing sports, 
+                    or enjoying a good meal while on a hike. Reading books is my favourite hobby while 
+                    I can produce full-fledged music in FL Studio.
+                  </p>
                 </div>
-            </div>
-        </>
-    );
+              </div>
+            </section>
+
+            {/* Contact CTA */}
+            <section className="rounded-lg border bg-muted/50 p-6 text-center">
+              <p className="text-lg text-muted-foreground">
+                Want to collaborate or just say hello? Feel free to{' '}
+                <a 
+                  href="https://x.com/solanki_haard" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="font-medium text-primary hover:underline"
+                >
+                  reach out on Twitter
+                </a>{' '}
+                or email me at{' '}
+                <a 
+                  href="mailto:haardsolanki.itm@gmail.com" 
+                  className="font-medium text-primary hover:underline"
+                >
+                  haardsolanki.itm@gmail.com
+                </a>
+                !
+              </p>
+            </section>
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default About;
+
