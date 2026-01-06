@@ -125,9 +125,9 @@ const Home = () => {
                   <Button 
                     variant="default" 
                     size="lg" 
-                    className="glass border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-300 group"
+                    className="glass text-white hover:text-black border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-300 group"
                   >
-                    <span className="text-base">View Resume</span>
+                    <span className="text-base ">View Resume</span>
                     <motion.span
                       className="ml-2 inline-block"
                       animate={{ x: [0, 4, 0] }}
