@@ -22,9 +22,8 @@ const About = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
       },
     },
   };
@@ -32,7 +31,7 @@ const About = () => {
   return (
     <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
 
-      <Container className="py-20 relative z-10">
+      <Container className="py-24 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -42,10 +41,10 @@ const About = () => {
           {/* Header */}
           <motion.div variants={itemVariants} className="space-y-6 text-center py-12">
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white"
+              className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-black dark:text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             >
               About Me
             </motion.h1>
@@ -58,11 +57,11 @@ const About = () => {
           </motion.div>
 
           {/* Main Content */}
-          <div className="mx-auto max-w-4xl space-y-16">
+          <div className="mx-auto max-w-4xl space-y-20">
             {/* Introduction */}
             <motion.section
               variants={itemVariants}
-              className="space-y-6 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 bg-white dark:bg-gray-950"
+              className="space-y-6 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
             >
               <h2 className="text-3xl font-semibold text-black dark:text-white">Hello!</h2>
               <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -81,14 +80,14 @@ const About = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-6"
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              className="space-y-8"
             >
-              <h2 className="text-3xl font-semibold text-black dark:text-white text-center">
+              <h2 className="text-3xl font-bold text-black dark:text-white text-center">
                 Skills & Technologies
               </h2>
               <motion.div
-                className="flex flex-wrap gap-3 justify-center"
+                className="flex flex-wrap gap-4 justify-center"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -107,12 +106,13 @@ const About = () => {
                       hidden: { opacity: 0, scale: 0.8 },
                       visible: { opacity: 1, scale: 1 },
                     }}
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
                     <Badge
                       variant="secondary"
-                      className="text-sm px-4 py-2 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 cursor-pointer bg-white dark:bg-gray-950 text-black dark:text-white"
+                      className="text-sm px-4 py-2 border border-gray-300 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer bg-white dark:bg-gray-950 text-black dark:text-white hover:bg-blue-50 dark:hover:bg-gray-900"
                     >
                       {skill}
                     </Badge>
@@ -126,13 +126,13 @@ const About = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="space-y-8"
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+              className="space-y-12"
             >
-              <h2 className="text-3xl font-semibold text-black dark:text-white text-center">
+              <h2 className="text-3xl font-bold text-black dark:text-white text-center">
                 What I Do
               </h2>
-              <div className="grid gap-6 md:grid-cols-2">
+              <div className="grid gap-8 md:grid-cols-2">
                 {[
                   {
                     title: 'Backend Systems',
@@ -156,11 +156,11 @@ const About = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 bg-white dark:bg-gray-950 space-y-3"
+                    transition={{ delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
+                    whileHover={{ scale: 1.01, y: -4 }}
+                    className="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-400 bg-white dark:bg-gray-950 space-y-3 shadow-sm hover:shadow-md"
                   >
-                    <h3 className="text-xl font-medium text-black dark:text-white">{interest.title}</h3>
+                    <h3 className="text-xl font-bold text-black dark:text-white">{interest.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {interest.description}
                     </p>
@@ -174,12 +174,12 @@ const About = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 text-center bg-white dark:bg-gray-950"
+                whileHover={{ scale: 1.01 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                className="rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 text-center bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
               >
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                   Let's build something together.{' '}
@@ -187,18 +187,20 @@ const About = () => {
                     href="https://x.com/solanki_haard"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
-                    whileHover={{ scale: 1.05 }}
+                    className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline"
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
                     Twitter
                   </motion.a>{' '}
                   •{' '}
                   <motion.a
                     href="mailto:haardsolanki.itm@gmail.com"
-                    className="font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
-                    whileHover={{ scale: 1.05 }}
+                    className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline"
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   >
                     Email
                   </motion.a>

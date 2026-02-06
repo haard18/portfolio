@@ -1,6 +1,5 @@
 import Container from '@/components/common/Container';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { heroConfig, socialLinks } from '@/config/Hero';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
@@ -37,9 +36,8 @@ const Home = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
       },
     },
   };
@@ -48,8 +46,8 @@ const Home = () => {
     <div ref={containerRef} className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
       {/* Clean minimal background - no grids, no glows */}
 
-      <Container className="py-20 relative z-10">
-        <div className="space-y-32">
+      <Container className="py-24 relative z-10">
+        <div className="space-y-40">
           {/* Hero Section with Physics-Based Animations */}
           <motion.section
             style={{ opacity, scale, y }}
@@ -74,12 +72,12 @@ const Home = () => {
             </motion.div>
 
             {/* Name and Title - Clean Typography */}
-            <motion.div variants={itemVariants} className="space-y-6 text-center max-w-4xl mx-auto">
+            <motion.div variants={itemVariants} className="space-y-8 text-center max-w-4xl mx-auto">
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-black dark:text-white"
+                className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight text-black dark:text-white"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
               >
                 Haard Solanki
               </motion.h1>
@@ -97,27 +95,35 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* CTA Buttons - Clean */}
+            {/* CTA Buttons - Premium styling */}
             <motion.div
               variants={itemVariants}
               className="flex justify-center gap-4 flex-wrap"
             >
               <Link to={heroConfig.resumeLink}>
-                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
+                <motion.div 
+                  whileHover={{ scale: 1.01, y: -2 }} 
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                >
                   <Button 
                     size="lg" 
-                    className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300"
+                    className="bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-500 dark:hover:bg-blue-600 transition-all duration-300 px-8 py-3 rounded-lg font-medium shadow-sm hover:shadow-md"
                   >
                     <span className="text-base">View Resume</span>
                   </Button>
                 </motion.div>
               </Link>
               <Link to="/projects">
-                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
+                <motion.div 
+                  whileHover={{ scale: 1.01, y: -2 }} 
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                >
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300"
+                    className="border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 px-8 py-3 rounded-lg font-medium"
                   >
                     <span className="text-base">View Projects</span>
                   </Button>
@@ -165,15 +171,15 @@ const Home = () => {
             </motion.div>
           </motion.section>
 
-          <Separator className="opacity-20" />
+          <div className="divider-subtle opacity-30" />
 
           {/* Featured Projects */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="space-y-12"
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+            className="space-y-16"
           >
             <div className="text-center space-y-3">
               <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
@@ -186,12 +192,12 @@ const Home = () => {
             <div className="grid gap-8 md:grid-cols-2">
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  whileHover={{ scale: 1.01, y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="group cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 transition-all duration-300 bg-white dark:bg-gray-950"
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
                 >
-                  <h3 className="font-bold text-xl mb-3 text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                  <h3 className="font-bold text-2xl mb-4 text-black dark:text-white">
                     Elcara
                   </h3>
                   <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -201,12 +207,12 @@ const Home = () => {
               </Link>
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  whileHover={{ scale: 1.01, y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="group cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 transition-all duration-300 bg-white dark:bg-gray-950"
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
                 >
-                  <h3 className="font-bold text-xl mb-3 text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                  <h3 className="font-bold text-2xl mb-4 text-black dark:text-white">
                     WhiteBeard
                   </h3>
                   <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -222,20 +228,21 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="space-y-8"
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+            className="space-y-12"
           >
             <div className="text-center space-y-3">
               <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
                 Explore
               </h2>
             </div>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-3">
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileHover={{ scale: 1.01, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-6 transition-all duration-300 bg-white dark:bg-gray-950 text-center"
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
                 >
                   <h3 className="font-semibold text-lg text-black dark:text-white">
                     All Projects
@@ -244,9 +251,10 @@ const Home = () => {
               </Link>
               <Link to="/about">
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileHover={{ scale: 1.01, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-6 transition-all duration-300 bg-white dark:bg-gray-950 text-center"
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
                 >
                   <h3 className="font-semibold text-lg text-black dark:text-white">
                     About
@@ -255,9 +263,10 @@ const Home = () => {
               </Link>
               <Link to="/resume">
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileHover={{ scale: 1.01, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-6 transition-all duration-300 bg-white dark:bg-gray-950 text-center"
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
                 >
                   <h3 className="font-semibold text-lg text-black dark:text-white">
                     Resume

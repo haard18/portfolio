@@ -8,7 +8,7 @@
 
 @layer base {
   :root {
-    /* Light mode - Clean minimal */
+    /* Light mode - Clean minimal with blue accent */
     --background: 0 0% 100%;
     --foreground: 220 15% 12%;
     --card: 0 0% 100%;
@@ -21,18 +21,18 @@
     --secondary-foreground: 220 15% 12%;
     --muted: 220 10% 95%;
     --muted-foreground: 220 10% 45%;
-    --accent: 220 15% 12%;
+    --accent: 217 100% 53%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 88%;
-    --input: 220 10% 88%;
-    --ring: 220 15% 12%;
-    --radius: 0.5rem;
+    --border: 220 10% 92%;
+    --input: 220 10% 92%;
+    --ring: 217 100% 53%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark mode - Pure black background */
+    /* Dark mode - Pure black background with blue accent */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 220 15% 11%;
@@ -45,13 +45,13 @@
     --secondary-foreground: 0 0% 100%;
     --muted: 220 15% 14%;
     --muted-foreground: 220 10% 60%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 217 100% 53%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 0 0% 100%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 217 100% 53%;
   }
 }
 
@@ -92,7 +92,7 @@
 }
 
 .page-transition {
-  animation: page-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: page-enter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Custom Animations */
@@ -121,25 +121,40 @@
 }
 
 .animate-slide-up {
-  animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Smooth Hover Transitions */
+/* Smooth Hover Transitions - More refined */
 .smooth-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .smooth-hover:hover {
   transform: translateY(-2px);
 }
 
-/* Micro-interaction: Scale on hover */
+/* Micro-interaction: Subtle scale on hover */
 .scale-hover {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scale-hover:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
+}
+
+/* Card shadows for depth */
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Visual divider line */
+.divider-subtle {
+  @apply border-t border-gray-200 dark:border-gray-800;
 }
 
 /* Focus Rings */
