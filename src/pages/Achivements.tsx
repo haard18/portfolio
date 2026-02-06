@@ -47,13 +47,7 @@ const Achievements: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 grid-pattern opacity-50 pointer-events-none" />
-
-      {/* Subtle Gradient Orbs */}
-      <div className="fixed top-0 left-1/4 w-96 h-96 bg-neon-violet/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
-      <div className="fixed bottom-0 right-1/4 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '14s', animationDelay: '2s' }} />
+    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
 
       <Container className="py-20 relative z-10">
         <motion.div
@@ -67,30 +61,19 @@ const Achievements: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-4 text-center"
+            className="space-y-6 text-center py-12"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block mb-2 text-muted-foreground text-xl md:text-2xl font-mono font-normal">
-                $ cat achievements.log
-              </span>
-              <span className="gradient-text-elegant">Achievements</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white">
+              Achievements
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground"
+              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
             >
-              <span className="text-neon-cyan font-mono">{achievements.length}</span> milestones and counting
+              {achievements.length} milestones and counting
             </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            <Separator className="opacity-20" />
           </motion.div>
 
           {/* Achievements List */}
@@ -120,19 +103,19 @@ const Achievements: React.FC = () => {
                     </motion.div>
                     <div className="flex flex-col flex-1 space-y-2">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-neon-cyan font-mono text-sm md:text-base">
+                        <span className="text-gray-600 dark:text-gray-400 font-mono text-sm md:text-base">
                           {item.Date}
                         </span>
-                        <span className="text-muted-foreground">•</span>
-                        <span className="text-lg md:text-xl font-bold gradient-text-elegant">
+                        <span className="text-gray-400 dark:text-gray-600">•</span>
+                        <span className="text-lg md:text-xl font-bold text-black dark:text-white">
                           {item.event}
                         </span>
                       </div>
-                      <span className="text-base text-muted-foreground">
+                      <span className="text-base text-gray-600 dark:text-gray-400">
                         {item.Organization}
                       </span>
                       {item.achievement && (
-                        <span className="text-sm text-neon-green font-medium">
+                        <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
                           {item.achievement}
                         </span>
                       )}
@@ -154,12 +137,10 @@ const Achievements: React.FC = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="glass rounded-lg border-border hover:border-neon-violet/50 p-8 max-w-2xl mx-auto text-center neon-glow-hover"
+              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 max-w-2xl mx-auto text-center bg-white dark:bg-gray-950"
             >
-              <p className="text-lg text-muted-foreground">
-                Driven by curiosity, fueled by{' '}
-                <span className="text-neon-cyan font-mono">challenges</span>, and always
-                learning.
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Driven by curiosity, fueled by challenges, and always learning.
               </p>
             </motion.div>
           </motion.div>
