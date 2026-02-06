@@ -4,36 +4,36 @@ import { ThemeToggle } from './common/ThemeToggle';
 
 const Navbar = () => {
   return (
-    <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-sm">
+    <Container className="sticky top-0 z-20 py-4 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
       <div className="flex items-center justify-between px-6">
-        <div className="flex items-baseline gap-4">
+        <div className="flex items-center gap-8">
           <Link to="/">
-            <div className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300 flex items-center justify-center font-bold text-xl">
-              H
+            <div className="font-bold text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors duration-300">
+              HS
             </div>
           </Link>
-          <div className="flex items-center justify-center gap-4">
+          <div className="hidden md:flex items-center justify-center gap-8">
             <Link
               to="/"
-              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 font-medium"
             >
               Home
             </Link>
             <Link
-              to="/about"
-              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
-            >
-              About
-            </Link>
-            <Link
               to="/projects"
-              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 font-medium"
             >
               Projects
             </Link>
             <Link
+              to="/about"
+              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 font-medium"
+            >
+              About
+            </Link>
+            <Link
               to="/resume"
-              className="transition-all duration-300 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-4"
+              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 font-medium"
             >
               Resume
             </Link>
