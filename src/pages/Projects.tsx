@@ -33,13 +33,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 grid-pattern opacity-50 pointer-events-none" />
-
-      {/* Subtle Gradient Orbs */}
-      <div className="fixed top-0 left-1/3 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s' }} />
-      <div className="fixed bottom-0 right-1/3 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '16s', animationDelay: '4s' }} />
+    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
 
       <Container className="py-20 relative z-10">
         <motion.div
@@ -53,30 +47,19 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-4 text-center"
+            className="space-y-6 text-center py-12"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="block mb-2 text-muted-foreground text-xl md:text-2xl font-mono font-normal">
-                $ ls -la ./projects
-              </span>
-              <span className="gradient-text-elegant">Projects</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white">
+              Projects
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground"
+              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
             >
-              My projects and work across different technologies and domains.
+              Featured work from Elcara, WhiteBeard, and personal projects.
             </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            <Separator className="opacity-20" />
           </motion.div>
 
           {/* Projects Grid */}
@@ -93,9 +76,9 @@ const Projects = () => {
                 whileHover={{ y: -8 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <Card className="overflow-hidden glass border-border hover:border-neon-cyan/50 transition-all duration-300 neon-glow-hover h-full flex flex-col">
+                <Card className="overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 h-full flex flex-col bg-white dark:bg-gray-950">
                   <motion.div
-                    className="aspect-video overflow-hidden relative"
+                    className="aspect-video overflow-hidden relative bg-gray-100 dark:bg-gray-900"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -104,13 +87,12 @@ const Projects = () => {
                       alt={project.name}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                   </motion.div>
                   <CardHeader>
-                    <CardTitle className="text-xl gradient-text-elegant">
+                    <CardTitle className="text-xl text-black dark:text-white">
                       {project.name}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-gray-600 dark:text-gray-400">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
@@ -126,12 +108,11 @@ const Projects = () => {
                           whileTap={{ scale: 0.95 }}
                         >
                           <Button
-                            variant="default"
                             size="sm"
-                            className="w-full glass border-neon-cyan/30 hover:border-neon-cyan/60 transition-all duration-300"
+                            className="w-full bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300"
                           >
                             <ExternalLink className="mr-2 h-4 w-4" />
-                            Live Demo
+                            Live
                           </Button>
                         </motion.a>
                       )}
@@ -147,7 +128,7 @@ const Projects = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="w-full border-border hover:border-neon-green/60 transition-all duration-300"
+                            className="w-full border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300"
                           >
                             <Github className="mr-2 h-4 w-4" />
                             Code
