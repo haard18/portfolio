@@ -1,5 +1,4 @@
 import Container from '@/components/common/Container';
-import { Separator } from '@/components/ui/separator';
 import { aboutConfig } from '@/config/About';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';

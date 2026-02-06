@@ -1,6 +1,5 @@
 import Container from "@/components/common/Container";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import PDFViewer from "../components/Pdfviewer";
 import resume from "../data/Haard Solanki Resume final.pdf";
 import { Download } from "lucide-react";

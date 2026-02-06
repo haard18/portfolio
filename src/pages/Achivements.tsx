@@ -1,7 +1,6 @@
 import React from 'react';
 import achievements from '../data/achievement';
 import Container from '@/components/common/Container';
-import { Separator } from '@/components/ui/separator';
 import { motion } from 'framer-motion';
 
 // Helper function to get the correct medal emoji
