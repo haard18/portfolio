@@ -153,15 +153,15 @@ const Projects = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="glass rounded-lg border-border hover:border-neon-violet/50 p-8 max-w-2xl mx-auto neon-glow-hover"
+              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 max-w-2xl mx-auto bg-white dark:bg-gray-950"
             >
-              <p className="text-lg text-muted-foreground">
-                More projects on my{' '}
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Explore more on my{' '}
                 <motion.a
                   href="https://github.com/haard18"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-medium text-neon-cyan hover:text-neon-green transition-colors font-mono"
+                  className="font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

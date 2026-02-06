@@ -167,33 +167,6 @@ const Home = () => {
 
           <Separator className="opacity-20" />
 
-          {/* GitHub Terminal Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-8"
-          >
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight lg:text-4xl gradient-text-elegant">
-                <span className="block text-sm text-muted-foreground font-mono mb-2">
-                  $ git log --oneline
-                </span>
-                Live GitHub Activity
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Real-time feed from my GitHub — because code speaks louder than words
-              </p>
-            </div>
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            >
-              <GitHubTerminal />
-            </motion.div>
-          </motion.section>
-
           {/* Featured Projects */}
           <motion.section
             initial={{ opacity: 0, y: 40 }}

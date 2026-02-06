@@ -113,7 +113,7 @@ const About = () => {
                   >
                     <Badge
                       variant="secondary"
-                      className="text-sm px-4 py-2 glass border-border hover:border-neon-cyan/50 transition-all duration-300 cursor-pointer"
+                      className="text-sm px-4 py-2 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 cursor-pointer bg-white dark:bg-gray-950 text-black dark:text-white"
                     >
                       {skill}
                     </Badge>
@@ -122,7 +122,7 @@ const About = () => {
               </motion.div>
             </motion.section>
 
-            {/* Interests */}
+            {/* Expertise */}
             <motion.section
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -130,33 +130,26 @@ const About = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               className="space-y-8"
             >
-              <h2 className="text-3xl font-semibold gradient-text-elegant text-center">
-                <span className="block text-sm text-muted-foreground font-mono mb-2">
-                  $ cat interests.log
-                </span>
+              <h2 className="text-3xl font-semibold text-black dark:text-white text-center">
                 What I Do
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 {[
                   {
-                    title: 'Web3 & AI Integration',
-                    description: 'Merging Web3 with AI is one of my passions. I constantly explore new ways to integrate decentralized technologies with AI-driven solutions to create innovative and secure applications for the future.',
-                    color: 'neon-cyan',
+                    title: 'Backend Systems',
+                    description: 'Building high-performance, scalable backend infrastructure. Core systems that power trading and agentic applications.',
                   },
                   {
-                    title: 'Open Source',
-                    description: 'I actively contribute to open-source projects, helping the community and staying updated with the latest trends in the tech world. I love collaborating with other developers and sharing my knowledge.',
-                    color: 'neon-green',
+                    title: 'Blockchain Engineering',
+                    description: 'Smart contract development, DeFi protocols, and on-chain infrastructure. Solidity, Rust (Anchor), and ecosystem integrations.',
                   },
                   {
-                    title: 'Full Stack Development',
-                    description: 'Building complete web applications from frontend to backend, with a focus on modern frameworks, responsive design, and optimal user experience.',
-                    color: 'neon-violet',
+                    title: 'AI Systems',
+                    description: 'Integrating AI agents into production systems. LLM fine-tuning, agentic workflows, and intelligent automation.',
                   },
                   {
-                    title: 'Beyond Coding',
-                    description: "When I'm not coding, you can find me exploring new tech gadgets, playing sports, or enjoying a good meal while on a hike. Reading books is my favourite hobby while I can produce full-fledged music in FL Studio.",
-                    color: 'neon-cyan',
+                    title: 'DevOps & Infrastructure',
+                    description: 'Containerization, CI/CD, cloud platforms, and observability. Making systems reliable and scalable.',
                   },
                 ].map((interest, index) => (
                   <motion.div
@@ -166,10 +159,10 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.02, y: -5 }}
-                    className={`glass p-6 rounded-lg border-border hover:border-${interest.color}/50 transition-all duration-300 neon-glow-hover space-y-3`}
+                    className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 bg-white dark:bg-gray-950 space-y-3"
                   >
-                    <h3 className={`text-xl font-medium text-${interest.color}`}>{interest.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <h3 className="text-xl font-medium text-black dark:text-white">{interest.title}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {interest.description}
                     </p>
                   </motion.div>
@@ -187,30 +180,29 @@ const About = () => {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="glass rounded-lg border-border hover:border-neon-violet/50 p-8 text-center neon-glow-hover"
+                className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 text-center bg-white dark:bg-gray-950"
               >
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Want to collaborate or just say hello? Feel free to{' '}
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Let's build something together.{' '}
                   <motion.a
                     href="https://x.com/solanki_haard"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-neon-cyan hover:text-neon-green transition-colors"
+                    className="font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    reach out on Twitter
+                    Twitter
                   </motion.a>{' '}
-                  or email me at{' '}
+                  •{' '}
                   <motion.a
                     href="mailto:haardsolanki.itm@gmail.com"
-                    className="font-medium text-neon-violet hover:text-neon-cyan transition-colors"
+                    className="font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    haardsolanki.itm@gmail.com
+                    Email
                   </motion.a>
-                  !
                 </p>
               </motion.div>
             </motion.section>

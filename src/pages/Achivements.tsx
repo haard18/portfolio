@@ -90,7 +90,7 @@ const Achievements: React.FC = () => {
                 whileHover={{ x: 8, scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <div className="glass border-border hover:border-neon-cyan/50 transition-all duration-300 neon-glow-hover rounded-lg p-6">
+                <div className="border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 rounded-lg p-6 bg-white dark:bg-gray-950">
                   <div className="flex items-start space-x-4">
                     <motion.div
                       className="text-4xl"

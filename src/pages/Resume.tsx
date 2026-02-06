@@ -82,7 +82,7 @@ const Resume = () => {
             <motion.div
               whileHover={{ scale: 1.005 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="glass rounded-lg border-border hover:border-neon-cyan/30 p-4 transition-all duration-300 neon-glow-hover"
+              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-4 transition-all duration-300 bg-white dark:bg-gray-950"
             >
               <PDFViewer file={resume} />
             </motion.div>
@@ -99,16 +99,12 @@ const Resume = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="glass rounded-lg border-border hover:border-neon-violet/50 p-8 max-w-2xl mx-auto text-center neon-glow-hover"
+              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 max-w-2xl mx-auto text-center bg-white dark:bg-gray-950"
             >
-              <p className="text-lg text-muted-foreground">
-                Looking for a{' '}
-                <span className="text-neon-cyan font-mono">full-stack engineer</span> who
-                ships{' '}
-                <span className="text-neon-green font-mono">fast</span> and{' '}
-                <span className="text-neon-violet font-mono">reliably</span>?
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Looking for a backend engineer who ships fast and reliably?
               </p>
-              <p className="text-base text-muted-foreground mt-2">
+              <p className="text-base text-gray-600 dark:text-gray-400 mt-2">
                 Let's build something great together.
               </p>
             </motion.div>
