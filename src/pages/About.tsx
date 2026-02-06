@@ -29,8 +29,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
-
+    <div className="min-h-screen relative overflow-hidden bg-background">
       <Container className="py-24 relative z-10">
         <motion.div
           variants={containerVariants}
@@ -41,7 +40,7 @@ const About = () => {
           {/* Header */}
           <motion.div variants={itemVariants} className="space-y-6 text-center py-12">
             <motion.h1
-              className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-black dark:text-white"
+              className="text-8xl font-700 tracking-tight text-foreground"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -50,21 +49,21 @@ const About = () => {
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
+              className="mx-auto max-w-2xl text-lg text-muted-foreground font-400"
             >
               Get to know me better
             </motion.p>
           </motion.div>
 
           {/* Main Content */}
-          <div className="mx-auto max-w-4xl space-y-20">
+          <div className="mx-auto max-w-4xl space-y-24">
             {/* Introduction */}
             <motion.section
               variants={itemVariants}
-              className="space-y-6 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
+              className="space-y-6 p-8 rounded-3xl border border-border hover:border-border/50 transition-all duration-300 bg-card shadow-card"
             >
-              <h2 className="text-3xl font-semibold text-black dark:text-white">Hello!</h2>
-              <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <h2 className="text-3xl font-700 text-foreground">Hello!</h2>
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed font-400">
                 <p>
                   I'm Haard, a backend and blockchain engineer. Currently founding engineer at Elcara, building agentic systems and market infrastructure. Also core engineer at WhiteBeard, shipping trading infrastructure and risk management systems.
                 </p>
@@ -83,7 +82,7 @@ const About = () => {
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               className="space-y-8"
             >
-              <h2 className="text-3xl font-bold text-black dark:text-white text-center">
+              <h2 className="text-4xl font-700 text-foreground text-center">
                 Skills & Technologies
               </h2>
               <motion.div
@@ -106,13 +105,13 @@ const About = () => {
                       hidden: { opacity: 0, scale: 0.8 },
                       visible: { opacity: 1, scale: 1 },
                     }}
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                   >
                     <Badge
                       variant="secondary"
-                      className="text-sm px-4 py-2 border border-gray-300 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer bg-white dark:bg-gray-950 text-black dark:text-white hover:bg-blue-50 dark:hover:bg-gray-900"
+                      className="text-sm px-4 py-2 border border-border hover:border-border/50 transition-all duration-200 cursor-pointer bg-secondary text-muted-foreground hover:bg-secondary/80 font-500"
                     >
                       {skill}
                     </Badge>
@@ -129,7 +128,7 @@ const About = () => {
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
               className="space-y-12"
             >
-              <h2 className="text-3xl font-bold text-black dark:text-white text-center">
+              <h2 className="text-4xl font-700 text-foreground text-center">
                 What I Do
               </h2>
               <div className="grid gap-8 md:grid-cols-2">
@@ -157,11 +156,11 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
-                    whileHover={{ scale: 1.01, y: -4 }}
-                    className="p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-400 bg-white dark:bg-gray-950 space-y-3 shadow-sm hover:shadow-md"
+                    whileHover={{ y: -4 }}
+                    className="p-8 rounded-3xl border border-border hover:border-border/50 transition-all duration-300 bg-card shadow-card space-y-3"
                   >
-                    <h3 className="text-xl font-bold text-black dark:text-white">{interest.title}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <h3 className="text-xl font-700 text-foreground">{interest.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed font-400">
                       {interest.description}
                     </p>
                   </motion.div>
@@ -175,32 +174,33 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+              className="pb-24"
             >
               <motion.div
-                whileHover={{ scale: 1.01 }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                className="rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 text-center bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="rounded-3xl border border-border hover:border-border/50 p-8 text-center bg-card shadow-card"
               >
-                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed font-400">
                   Let's build something together.{' '}
                   <motion.a
                     href="https://x.com/solanki_haard"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline"
+                    className="font-600 text-accent hover:text-accent/80 transition-colors underline underline-offset-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                   >
                     Twitter
                   </motion.a>{' '}
                   •{' '}
                   <motion.a
                     href="mailto:haardsolanki.itm@gmail.com"
-                    className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline"
+                    className="font-600 text-accent hover:text-accent/80 transition-colors underline underline-offset-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                   >
                     Email
                   </motion.a>

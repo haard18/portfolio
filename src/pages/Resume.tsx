@@ -14,8 +14,7 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
-
+    <div className="min-h-screen relative overflow-hidden bg-background">
       <Container className="py-20 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -27,17 +26,17 @@ const Resume = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="space-y-6 text-center py-12"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white">
+            <h1 className="text-8xl font-700 tracking-tight text-foreground">
               Resume
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
+              className="mx-auto max-w-2xl text-lg text-muted-foreground font-400"
             >
               Professional experience and qualifications
             </motion.p>
@@ -51,23 +50,16 @@ const Resume = () => {
             className="flex justify-center"
           >
             <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
               <Button
                 onClick={handleDownload}
                 size="lg"
-                className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300"
+                className="bg-accent hover:bg-accent/90 text-white transition-all duration-300 px-8 py-3 font-600 rounded-lg"
               >
                 <Download className="mr-2 h-5 w-5" />
                 <span className="text-base">Download Resume</span>
-                <motion.span
-                  className="ml-2 inline-block"
-                  animate={{ y: [0, 3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  ↓
-                </motion.span>
               </Button>
             </motion.div>
           </motion.div>
@@ -76,12 +68,12 @@ const Resume = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.6, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <motion.div
-              whileHover={{ scale: 1.005 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-4 transition-all duration-300 bg-white dark:bg-gray-950"
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-border hover:border-border/50 p-4 transition-all duration-300 bg-card shadow-card"
             >
               <PDFViewer file={resume} />
             </motion.div>
@@ -92,18 +84,18 @@ const Resume = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-8"
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            className="pt-8 pb-24"
           >
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 p-8 max-w-2xl mx-auto text-center bg-white dark:bg-gray-950"
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-border hover:border-border/50 p-8 max-w-2xl mx-auto text-center bg-card shadow-card"
             >
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-muted-foreground font-400">
                 Looking for a backend engineer who ships fast and reliably?
               </p>
-              <p className="text-base text-gray-600 dark:text-gray-400 mt-2">
+              <p className="text-base text-muted-foreground/80 mt-2 font-400">
                 Let's build something great together.
               </p>
             </motion.div>

@@ -43,38 +43,36 @@ const Home = () => {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
-      {/* Clean minimal background - no grids, no glows */}
-
-      <Container className="py-24 relative z-10">
-        <div className="space-y-40">
+    <div ref={containerRef} className="min-h-screen relative overflow-hidden bg-background">
+      <Container className="relative z-10">
+        <div className="space-y-96">
           {/* Hero Section with Physics-Based Animations */}
           <motion.section
             style={{ opacity, scale, y }}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="min-h-[80vh] flex flex-col justify-center space-y-12"
+            className="min-h-[80vh] flex flex-col justify-center space-y-16 py-24"
           >
             {/* Profile Image - Clean */}
             <motion.div variants={itemVariants} className="flex justify-center">
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 className="relative"
               >
                 <img
                   src={haard}
                   alt={heroConfig.name}
-                  className="h-40 w-40 rounded-full border border-gray-300 dark:border-gray-700 object-cover shadow-lg"
+                  className="h-40 w-40 rounded-full border border-border object-cover shadow-card"
                 />
               </motion.div>
             </motion.div>
 
-            {/* Name and Title - Clean Typography */}
+            {/* Name and Title - Premium Typography */}
             <motion.div variants={itemVariants} className="space-y-8 text-center max-w-4xl mx-auto">
               <motion.h1 
-                className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight text-black dark:text-white"
+                className="text-8xl font-700 tracking-tight leading-tight text-foreground"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -84,12 +82,12 @@ const Home = () => {
               
               <motion.div
                 variants={itemVariants}
-                className="space-y-4"
+                className="space-y-6"
               >
-                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium">
+                <p className="text-2xl font-600 text-foreground/90">
                   Backend & Blockchain Engineer
                 </p>
-                <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-400">
                   Founding engineer at Elcara, building agentic systems and market infrastructure. Backend engineer at WhiteBeard, shipping core trading systems. DeFi protocol specialist.
                 </p>
               </motion.div>
@@ -102,13 +100,13 @@ const Home = () => {
             >
               <Link to={heroConfig.resumeLink}>
                 <motion.div 
-                  whileHover={{ scale: 1.01, y: -2 }} 
+                  whileHover={{ y: -2 }} 
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <Button 
                     size="lg" 
-                    className="bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-500 dark:hover:bg-blue-600 transition-all duration-300 px-8 py-3 rounded-lg font-medium shadow-sm hover:shadow-md"
+                    className="bg-accent hover:bg-accent/90 text-white transition-all duration-300 px-8 py-3 rounded-lg font-600 shadow-sm hover:shadow-md"
                   >
                     <span className="text-base">View Resume</span>
                   </Button>
@@ -116,14 +114,14 @@ const Home = () => {
               </Link>
               <Link to="/projects">
                 <motion.div 
-                  whileHover={{ scale: 1.01, y: -2 }} 
+                  whileHover={{ y: -2 }} 
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 >
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 px-8 py-3 rounded-lg font-medium"
+                    className="border-border hover:bg-secondary transition-all duration-300 px-8 py-3 rounded-lg font-600"
                   >
                     <span className="text-base">View Projects</span>
                   </Button>
@@ -134,7 +132,7 @@ const Home = () => {
             {/* Social Links - Clean */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center gap-8"
+              className="flex justify-center gap-3"
             >
               {socialLinks.map((link, index) => (
                 <motion.a
@@ -142,9 +140,9 @@ const Home = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-black dark:hover:text-white transition-all duration-300"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-200"
                   aria-label={link.name}
-                  whileHover={{ y: -4, scale: 1.1 }}
+                  whileHover={{ y: -2, scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -181,41 +179,41 @@ const Home = () => {
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
             className="space-y-16"
           >
-            <div className="text-center space-y-3">
-              <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
+            <div className="text-center space-y-4">
+              <h2 className="text-6xl font-700 tracking-tight text-foreground">
                 Featured Work
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-400">
                 Building production systems at scale
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.01, y: -4 }}
+                  whileHover={{ y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-3xl border border-border hover:border-border/50 p-8 transition-all duration-300 bg-card shadow-card"
                 >
-                  <h3 className="font-bold text-2xl mb-4 text-black dark:text-white">
+                  <h3 className="font-700 text-2xl mb-4 text-foreground">
                     Elcara
                   </h3>
-                  <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed font-400">
                     Founding engineer. Building agentic systems, market infrastructure, and AI-powered tools for capital markets.
                   </p>
                 </motion.div>
               </Link>
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.01, y: -4 }}
+                  whileHover={{ y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-3xl border border-border hover:border-border/50 p-8 transition-all duration-300 bg-card shadow-card"
                 >
-                  <h3 className="font-bold text-2xl mb-4 text-black dark:text-white">
+                  <h3 className="font-700 text-2xl mb-4 text-foreground">
                     WhiteBeard
                   </h3>
-                  <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed font-400">
                     Backend & systems engineer. Core infrastructure, order execution, risk management, and blockchain integration.
                   </p>
                 </motion.div>
@@ -229,46 +227,46 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
-            className="space-y-12"
+            className="space-y-12 pb-24"
           >
-            <div className="text-center space-y-3">
-              <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
+            <div className="text-center">
+              <h2 className="text-5xl font-700 tracking-tight text-foreground">
                 Explore
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               <Link to="/projects">
                 <motion.div
-                  whileHover={{ scale: 1.01, y: -2 }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-3xl border border-border hover:border-border/50 p-8 transition-all duration-300 bg-card shadow-card text-center"
                 >
-                  <h3 className="font-semibold text-lg text-black dark:text-white">
+                  <h3 className="font-600 text-lg text-foreground">
                     All Projects
                   </h3>
                 </motion.div>
               </Link>
               <Link to="/about">
                 <motion.div
-                  whileHover={{ scale: 1.01, y: -2 }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-3xl border border-border hover:border-border/50 p-8 transition-all duration-300 bg-card shadow-card text-center"
                 >
-                  <h3 className="font-semibold text-lg text-black dark:text-white">
+                  <h3 className="font-600 text-lg text-foreground">
                     About
                   </h3>
                 </motion.div>
               </Link>
               <Link to="/resume">
                 <motion.div
-                  whileHover={{ scale: 1.01, y: -2 }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="group cursor-pointer rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 transition-all duration-400 bg-white dark:bg-gray-950 text-center shadow-sm hover:shadow-md"
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group cursor-pointer rounded-3xl border border-border hover:border-border/50 p-8 transition-all duration-300 bg-card shadow-card text-center"
                 >
-                  <h3 className="font-semibold text-lg text-black dark:text-white">
+                  <h3 className="font-600 text-lg text-foreground">
                     Resume
                   </h3>
                 </motion.div>

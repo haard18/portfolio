@@ -31,8 +31,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
-
+    <div className="min-h-screen relative overflow-hidden bg-background">
       <Container className="py-24 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -47,14 +46,14 @@ const Projects = () => {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
             className="space-y-6 text-center py-12"
           >
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-black dark:text-white">
+            <h1 className="text-8xl font-700 tracking-tight text-foreground">
               Projects
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
+              className="mx-auto max-w-2xl text-lg text-muted-foreground font-400"
             >
               Featured work from Elcara, WhiteBeard, and personal projects.
             </motion.p>
@@ -71,39 +70,39 @@ const Projects = () => {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               >
-                <Card className="overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-400 h-full flex flex-col bg-white dark:bg-gray-950 rounded-2xl shadow-sm hover:shadow-lg">
+                <Card className="overflow-hidden border border-border hover:border-border/50 transition-all duration-300 h-full flex flex-col bg-card rounded-3xl shadow-card">
                   <div className="p-8 space-y-4 flex-1 flex flex-col">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-2xl font-bold text-black dark:text-white">
+                        <CardTitle className="text-2xl font-700 text-foreground">
                           {project.name}
                         </CardTitle>
-                        <span className="text-xs font-semibold text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30 px-3 py-1 rounded-full">
+                        <span className="text-xs font-600 text-accent bg-accent/10 px-3 py-1 rounded-full">
                           {project.org}
                         </span>
                       </div>
-                      <CardDescription className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                      <CardDescription className="text-muted-foreground text-sm leading-relaxed font-400">
                         {project.description}
                       </CardDescription>
                     </div>
 
                     {project.highlights && (
-                      <p className="text-sm text-gray-600 dark:text-gray-400 italic border-l-2 border-blue-500 pl-3">
+                      <p className="text-sm text-muted-foreground italic border-l-2 border-accent pl-3 font-400">
                         {project.highlights}
                       </p>
                     )}
 
                     {project.tech && (
                       <div className="space-y-2">
-                        <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Tech Stack</p>
+                        <p className="text-xs font-600 text-foreground/70 uppercase tracking-wide">Tech Stack</p>
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((t, i) => (
                             <span
                               key={i}
-                              className="text-xs bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-md"
+                              className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-lg font-500 border border-border"
                             >
                               {t}
                             </span>
@@ -113,7 +112,7 @@ const Projects = () => {
                     )}
 
                     {project.commits && (
-                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                      <p className="text-xs text-muted-foreground font-400">
                         <strong>{project.commits}</strong> commits
                       </p>
                     )}
@@ -125,13 +124,13 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1"
-                          whileHover={{ scale: 1.01 }}
+                          whileHover={{ y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                          transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                         >
                           <Button
                             size="sm"
-                            className="w-full bg-blue-500 hover:bg-blue-600 text-white dark:bg-blue-500 dark:hover:bg-blue-600 transition-all duration-300 rounded-lg font-medium"
+                            className="w-full bg-accent hover:bg-accent/90 text-white transition-all duration-300 rounded-lg font-600"
                           >
                             <Github className="mr-2 h-4 w-4" />
                             View Code
@@ -151,23 +150,23 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="text-center pt-12"
+            className="text-center pt-12 pb-24"
           >
             <motion.div
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 p-8 max-w-2xl mx-auto bg-white dark:bg-gray-950 shadow-sm hover:shadow-md"
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              className="rounded-3xl border border-border hover:border-border/50 p-8 max-w-2xl mx-auto bg-card shadow-card"
             >
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-muted-foreground font-400">
                 Explore more on my{' '}
                 <motion.a
                   href="https://github.com/haard18"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 transition-colors underline"
+                  className="font-600 text-accent hover:text-accent/80 transition-colors underline underline-offset-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
                 >
                   GitHub
                 </motion.a>

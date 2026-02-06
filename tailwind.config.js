@@ -57,6 +57,40 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontSize: {
+        // 8pt-based scale
+        xs: ["12px", { lineHeight: "1.5", letterSpacing: "0.02em" }],
+        sm: ["14px", { lineHeight: "1.5", letterSpacing: "0.01em" }],
+        base: ["16px", { lineHeight: "1.6", letterSpacing: "0" }],
+        lg: ["18px", { lineHeight: "1.6", letterSpacing: "0" }],
+        xl: ["20px", { lineHeight: "1.5", letterSpacing: "0" }],
+        "2xl": ["24px", { lineHeight: "1.5", letterSpacing: "-0.01em" }],
+        "3xl": ["28px", { lineHeight: "1.4", letterSpacing: "-0.01em" }],
+        "4xl": ["32px", { lineHeight: "1.4", letterSpacing: "-0.02em" }],
+        "5xl": ["40px", { lineHeight: "1.3", letterSpacing: "-0.02em" }],
+        "6xl": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        "7xl": ["56px", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        "8xl": ["64px", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+      },
+      spacing: {
+        // 8px grid
+        0: "0",
+        1: "8px",
+        2: "16px",
+        3: "24px",
+        4: "32px",
+        6: "48px",
+        8: "64px",
+        12: "96px",
+      },
+      transitionDuration: {
+        fast: "200ms",
+        normal: "300ms",
+        slow: "500ms",
+      },
+      transitionTimingFunction: {
+        "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

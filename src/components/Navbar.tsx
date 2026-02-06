@@ -4,46 +4,55 @@ import { ThemeToggle } from './common/ThemeToggle';
 
 const Navbar = () => {
   return (
-    <Container className="sticky top-0 z-20 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
-      <div className="flex items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-8 md:gap-10">
+    <nav className="sticky top-0 z-20 bg-white/80 dark:bg-black/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 shadow-xs">
+      <Container className="h-16 flex items-center justify-between px-4 md:px-6">
+        {/* Logo & Brand */}
+        <div className="flex items-center gap-8 md:gap-12">
           <Link to="/">
-            <div className="font-bold text-2xl text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300">
+            <div className="font-semibold text-2xl text-foreground hover:text-accent transition-colors duration-200 hover:underline hover:underline-offset-4">
               HS
             </div>
           </Link>
-          <div className="hidden md:flex items-center justify-center gap-8">
+
+          {/* Navigation Links - Desktop only */}
+          <div className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 font-medium text-sm"
+              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
             >
               Home
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               to="/projects"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 font-medium text-sm"
+              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
             >
               Projects
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 font-medium text-sm"
+              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
             >
               About
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               to="/resume"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 font-medium text-sm"
+              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
             >
               Resume
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
             </Link>
           </div>
         </div>
+
+        {/* Theme Toggle */}
         <div className="flex items-center gap-4">
           <ThemeToggle />
         </div>
-      </div>
-    </Container>
+      </Container>
+    </nav>
   );
 };
 
