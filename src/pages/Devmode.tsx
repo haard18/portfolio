@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getGithubStats } from "@/data/github";
 import Home from "./Home"; // Import Home component to switch back
-import { projects } from "@/data/projects"; // Import your projects data
 import { motion, AnimatePresence } from "framer-motion";
 import "./dev.css";
 
@@ -46,62 +45,7 @@ const Devmode: React.FC = () => {
     let output: string | JSX.Element = "";
     switch (input.trim()) {
       case "/projects":
-        setIsLoading("Loading projects...");
-        await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate loading time
-
-        output = (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-transparent p-4 rounded-lg shadow-lg border border-green-500/30 hover:border-green-500/60 transition-all duration-300"
-              >
-                <motion.img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-32 object-cover rounded-md mb-4"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <h2 className="text-xl font-semibold text-green-500">
-                  {project.name}
-                </h2>
-                <p className="text-gray-400">{project.description}</p>
-                <div className="mt-4 flex gap-2">
-                  <motion.a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 underline"
-                    whileHover={{ scale: 1.05, color: "#00ff00" }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    View Project
-                  </motion.a>
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 underline"
-                    whileHover={{ scale: 1.05, color: "#00ff00" }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    GitHub
-                  </motion.a>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        );
+        output = "Projects list available on the main portfolio page. Check /back to return.";
         break;
       case "/skills":
         setIsLoading("Installing skills package");
