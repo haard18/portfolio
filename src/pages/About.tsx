@@ -31,13 +31,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 grid-pattern opacity-50 pointer-events-none" />
-
-      {/* Subtle Gradient Orbs */}
-      <div className="fixed top-0 right-1/4 w-96 h-96 bg-neon-violet/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
-      <div className="fixed bottom-0 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '14s', animationDelay: '3s' }} />
+    <div className="min-h-screen relative overflow-hidden bg-white dark:bg-black">
 
       <Container className="py-20 relative z-10">
         <motion.div
@@ -47,28 +41,21 @@ const About = () => {
           className="space-y-12"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="space-y-4 text-center">
+          <motion.div variants={itemVariants} className="space-y-6 text-center py-12">
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block mb-2 text-muted-foreground text-xl md:text-2xl font-mono font-normal">
-                $ cat about.md
-              </span>
-              <span className="gradient-text-elegant">About Me</span>
+              About Me
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground"
+              className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400"
             >
               Get to know me better
             </motion.p>
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <Separator className="opacity-20" />
           </motion.div>
 
           {/* Main Content */}
@@ -76,19 +63,15 @@ const About = () => {
             {/* Introduction */}
             <motion.section
               variants={itemVariants}
-              className="space-y-6 glass p-8 rounded-lg border-border hover:border-neon-cyan/30 transition-all duration-300"
+              className="space-y-6 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 bg-white dark:bg-gray-950"
             >
-              <h2 className="text-3xl font-semibold gradient-text-elegant">Hello!</h2>
-              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl font-semibold text-black dark:text-white">Hello!</h2>
+              <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
-                  Hey there! I'm <span className="text-neon-cyan font-medium">Haard</span>, a passionate full-stack web developer with a knack for
-                  building modern web applications that merge <span className="text-neon-green font-mono">Web3</span> and <span className="text-neon-violet font-mono">AI</span> technology. I love
-                  crafting seamless user experiences and delving into the world of decentralized apps.
+                  I'm Haard, a backend and blockchain engineer. Currently founding engineer at Elcara, building agentic systems and market infrastructure. Also core engineer at WhiteBeard, shipping trading infrastructure and risk management systems.
                 </p>
                 <p>
-                  I specialize in full-stack web development, primarily using technologies like
-                  React, Node.js, TypeScript, and Tailwind CSS. I'm also deeply interested in
-                  blockchain development and the rapidly evolving world of decentralized applications.
+                  I specialize in systems architecture, blockchain development, and scalable backend infrastructure. Tech: Rust, TypeScript, Solidity, distributed systems, DeFi protocols, and production DevOps.
                 </p>
               </div>
             </motion.section>
@@ -102,10 +85,7 @@ const About = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-6"
             >
-              <h2 className="text-3xl font-semibold gradient-text-elegant text-center">
-                <span className="block text-sm text-muted-foreground font-mono mb-2">
-                  $ ls -la ./skills
-                </span>
+              <h2 className="text-3xl font-semibold text-black dark:text-white text-center">
                 Skills & Technologies
               </h2>
               <motion.div
