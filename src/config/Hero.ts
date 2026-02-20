@@ -2,11 +2,10 @@ import { faGithub, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-b
 
 export const heroConfig = {
   name: 'Haard Solanki',
-  title: 'Full Stack Web Developer',
-  description: 'full-stack engineer diving deep into web3 infrastructure',
-  subtitle: 'currently shipping at goldPesa — defi, tokenomics & beyond',
+  title: 'Backend & Blockchain Engineer',
+  description:
+    'Founding engineer at Elcara, building agentic systems and market infrastructure. Backend engineer at WhiteBeard, shipping core trading systems. DeFi protocol specialist.',
   resumeLink: '/resume',
-  contactLink: '/contact',
 };
 
 export const socialLinks = [

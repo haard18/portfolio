@@ -1,57 +1,78 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Container from './common/Container';
-import { ThemeToggle } from './common/ThemeToggle';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/about', label: 'About' },
+  { to: '/achievements', label: 'Achievements' },
+  { to: '/resume', label: 'Resume' },
+];
 
 const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
+
   return (
-    <nav className="sticky top-0 z-20 bg-white/80 dark:bg-black/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 shadow-xs">
-      <Container className="h-16 flex items-center justify-between px-4 md:px-6">
-        {/* Logo & Brand */}
-        <div className="flex items-center gap-8 md:gap-12">
-          <Link to="/">
-            <div className="font-semibold text-2xl text-foreground hover:text-accent transition-colors duration-200 hover:underline hover:underline-offset-4">
-              HS
-            </div>
-          </Link>
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <Container className="h-14 flex items-center justify-between">
+        <Link to="/" className="font-mono text-lg font-semibold text-foreground hover:text-accent transition-colors">
+          haardsolanki.xyz
+        </Link>
 
-          {/* Navigation Links - Desktop only */}
-          <div className="hidden md:flex items-center gap-8">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
             <Link
-              to="/"
-              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
+              key={link.to}
+              to={link.to}
+              className={cn(
+                'text-sm transition-colors',
+                pathname === link.to
+                  ? 'text-foreground font-medium'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
             >
-              Home
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
+              {link.label}
             </Link>
-            <Link
-              to="/projects"
-              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
-            >
-              Projects
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
-            </Link>
-            <Link
-              to="/about"
-              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
-            >
-              About
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
-            </Link>
-            <Link
-              to="/resume"
-              className="text-sm font-500 text-foreground/80 hover:text-foreground relative group transition-colors duration-200"
-            >
-              Resume
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-300" />
-            </Link>
-          </div>
+          ))}
         </div>
 
-        {/* Theme Toggle */}
-        <div className="flex items-center gap-4">
-          <ThemeToggle />
-        </div>
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-2 text-foreground"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </Container>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-border bg-background">
+          <Container className="py-4 flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={cn(
+                  'text-sm py-1 transition-colors',
+                  pathname === link.to
+                    ? 'text-foreground font-medium'
+                    : 'text-muted-foreground hover:text-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </Container>
+        </div>
+      )}
     </nav>
   );
 };
