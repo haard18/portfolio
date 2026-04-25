@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Home from './pages/Home';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Projects from './pages/Projects';
@@ -6,6 +7,7 @@ import About from './pages/About';
 import Resume from './pages/Resume';
 import Navbar from './components/Navbar';
 import { InteractiveTerminal } from './components/InteractiveTerminal';
+import { KeyboardLoader } from './components/KeyboardLoader';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ease } from './lib/motion';
 
@@ -42,8 +44,11 @@ function AnimatedRoutes() {
 }
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <BrowserRouter>
+      {!loaded && <KeyboardLoader onLoadingComplete={() => setLoaded(true)} />}
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
         <AnimatedRoutes />

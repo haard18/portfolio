@@ -9,6 +9,7 @@ import { stagger, fadeUp, sectionReveal } from '@/lib/motion';
 import { projects } from '@/data/projects';
 import achievements from '@/data/achievement';
 import { Github, ArrowRight } from 'lucide-react';
+import { Keyboard } from '@/components/ui/keyboard';
 
 const featured = projects.filter((p) =>
   ['Email Engine', 'Quantum Backend', 'Poly Ranker', 'Quantum Control Plane'].includes(p.name)
@@ -47,11 +48,11 @@ const Home = () => {
               variants={fadeUp}
               src={haard}
               alt={heroConfig.name}
-              className="h-28 w-28 rounded-full border border-border object-cover"
+              className="h-28 w-28 rounded-full border-2 border-accent/20 shadow-soft-lg ring-4 ring-accent/5 object-cover"
             />
 
             <motion.div variants={fadeUp} className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-foreground via-foreground to-accent/60 bg-clip-text text-transparent">
                 {heroConfig.name}
               </h1>
               <p className="font-mono text-accent text-sm">
@@ -68,7 +69,7 @@ const Home = () => {
 
             <motion.div variants={fadeUp} className="flex gap-3">
               <Link to={heroConfig.resumeLink}>
-                <Button className="bg-accent hover:bg-accent/90 text-white">
+                <Button className="bg-accent hover:bg-accent/90 text-white shadow-md hover:shadow-lg transition-all">
                   View Resume
                 </Button>
               </Link>
@@ -84,7 +85,7 @@ const Home = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-200"
                   aria-label={link.name}
                 >
                   <FontAwesomeIcon icon={link.icon} className="text-lg" />
@@ -96,7 +97,7 @@ const Home = () => {
       </section>
 
       {/* Current Roles */}
-      <section className="border-t border-border">
+      <section className="border-t border-border/50 bg-section-alt">
         <Container className="py-20">
           <motion.div {...sectionReveal} className="space-y-8">
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -104,7 +105,7 @@ const Home = () => {
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {roles.map((r) => (
-                <div key={r.company} className="p-5 rounded-lg border border-border space-y-2">
+                <div key={r.company} className="p-5 rounded-lg border border-border/60 bg-surface-raised shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 space-y-2">
                   <div className="flex items-baseline gap-2">
                     <h3 className="text-sm font-semibold text-foreground">{r.company}</h3>
                     <span className="font-mono text-xs text-muted-foreground">{r.role}</span>
@@ -118,7 +119,7 @@ const Home = () => {
       </section>
 
       {/* Tech */}
-      <section className="border-t border-border">
+      <section className="border-t border-border/50">
         <Container className="py-20">
           <motion.div {...sectionReveal} className="space-y-6">
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -128,7 +129,7 @@ const Home = () => {
               {techHighlights.map((t) => (
                 <span
                   key={t}
-                  className="font-mono text-xs px-3 py-1.5 rounded border border-border text-muted-foreground"
+                  className="font-mono text-xs px-3 py-1.5 rounded-md bg-secondary/60 border-0 text-muted-foreground"
                 >
                   {t}
                 </span>
@@ -139,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Selected Projects */}
-      <section className="border-t border-border">
+      <section className="border-t border-border/50 bg-section-alt">
         <Container className="py-20">
           <motion.div {...sectionReveal} className="space-y-8">
             <div className="flex items-baseline justify-between">
@@ -157,13 +158,13 @@ const Home = () => {
               {featured.map((project, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-border p-5 flex flex-col gap-3 hover:border-muted-foreground/25 transition-colors"
+                  className={`rounded-lg border border-border/60 bg-surface-raised shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 p-5 flex flex-col gap-3 border-l-2 ${project.org === 'Elcara' ? 'border-l-elcara' : 'border-l-whitebeard'}`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="text-sm font-semibold text-foreground leading-tight">
                       {project.name}
                     </h3>
-                    <span className="font-mono text-[11px] text-accent whitespace-nowrap shrink-0">
+                    <span className={`font-mono text-[11px] whitespace-nowrap shrink-0 px-1.5 py-0.5 rounded ${project.org === 'Elcara' ? 'text-elcara bg-elcara-subtle' : 'text-whitebeard bg-whitebeard-subtle'}`}>
                       {project.org}
                     </span>
                   </div>
@@ -174,7 +175,7 @@ const Home = () => {
                     {project.tech?.slice(0, 4).map((t, j) => (
                       <span
                         key={j}
-                        className="font-mono text-[11px] px-2 py-0.5 rounded border border-border text-muted-foreground"
+                        className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-secondary/60 border-0 text-muted-foreground"
                       >
                         {t}
                       </span>
@@ -199,7 +200,7 @@ const Home = () => {
       </section>
 
       {/* Recent Achievements */}
-      <section className="border-t border-border">
+      <section className="border-t border-border/50">
         <Container className="py-20">
           <motion.div {...sectionReveal} className="space-y-8">
             <div className="flex items-baseline justify-between">
@@ -232,8 +233,22 @@ const Home = () => {
         </Container>
       </section>
 
+      {/* Interactive Keyboard */}
+      <section className="border-t border-border/50 bg-section-alt">
+        <Container className="py-20">
+          <motion.div {...sectionReveal} className="space-y-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              Try it out
+            </p>
+            <div className="flex justify-center overflow-x-auto">
+              <Keyboard theme="dolch" enableSound enableHaptics />
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
       {/* Contact footer */}
-      <section className="border-t border-border">
+      <section className="border-t border-border/50">
         <Container className="py-16">
           <motion.div {...sectionReveal} className="text-center space-y-3">
             <p className="text-sm text-muted-foreground">

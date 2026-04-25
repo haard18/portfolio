@@ -3,10 +3,13 @@ import Container from '@/components/common/Container';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp } from '@/lib/motion';
 
+const isWin = (achievement: string) =>
+  /first|winner/i.test(achievement);
+
 const Achievements = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Container className="py-20 max-w-2xl">
+      <Container className="py-20 max-w-3xl">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -23,28 +26,30 @@ const Achievements = () => {
             </h1>
           </motion.div>
 
-          {/* List */}
-          <motion.ul variants={stagger} className="divide-y divide-border">
+          {/* Cards */}
+          <motion.div variants={stagger} className="grid gap-4">
             {achievements.map((item, i) => (
-              <motion.li
+              <motion.div
                 key={i}
                 variants={fadeUp}
-                className="py-4 flex gap-6 items-start"
+                className={`rounded-lg border border-border/60 bg-surface-raised p-5 shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 ${isWin(item.achievement) ? 'border-l-2 border-l-gold' : ''}`}
               >
-                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap pt-0.5 w-24 shrink-0">
-                  {item.date}
-                </span>
-                <div className="space-y-0.5">
-                  <p className="text-sm font-medium text-foreground">
-                    {item.event}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {item.achievement} &middot; {item.organization}
-                  </p>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-foreground">
+                      {item.event}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.achievement} &middot; {item.organization}
+                    </p>
+                  </div>
+                  <span className="bg-secondary/60 px-2 py-1 rounded font-mono text-xs text-muted-foreground whitespace-nowrap shrink-0">
+                    {item.date}
+                  </span>
                 </div>
-              </motion.li>
+              </motion.div>
             ))}
-          </motion.ul>
+          </motion.div>
         </motion.div>
       </Container>
     </div>

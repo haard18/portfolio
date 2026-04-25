@@ -33,14 +33,14 @@ const Projects = () => {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="rounded-lg border border-border p-5 flex flex-col gap-3 hover:border-muted-foreground/20 transition-colors"
+                className={`rounded-lg border border-border/60 bg-surface-raised shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 p-5 flex flex-col gap-3 border-l-2 ${project.org === 'Elcara' ? 'border-l-elcara' : 'border-l-whitebeard'}`}
               >
                 {/* Header row */}
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-sm font-semibold text-foreground leading-tight">
                     {project.name}
                   </h3>
-                  <span className="font-mono text-[11px] text-accent whitespace-nowrap shrink-0">
+                  <span className={`font-mono text-[11px] whitespace-nowrap shrink-0 px-1.5 py-0.5 rounded ${project.org === 'Elcara' ? 'text-elcara bg-elcara-subtle' : 'text-whitebeard bg-whitebeard-subtle'}`}>
                     {project.org}
                   </span>
                 </div>
@@ -56,7 +56,7 @@ const Projects = () => {
                     {project.tech.map((t, j) => (
                       <span
                         key={j}
-                        className="font-mono text-[11px] px-2 py-0.5 rounded border border-border text-muted-foreground"
+                        className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-secondary/60 border-0 text-muted-foreground"
                       >
                         {t}
                       </span>

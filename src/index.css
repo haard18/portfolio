@@ -26,6 +26,30 @@
     --input: 40 10% 88%;
     --ring: 220 70% 50%;
     --radius: 0.5rem;
+
+    --surface-raised: 0 0% 100%;
+    --shadow-color: 220 20% 12%;
+    --accent-subtle: 220 70% 97%;
+    --elcara: 250 60% 55%;
+    --elcara-subtle: 250 40% 96%;
+    --whitebeard: 160 50% 42%;
+    --whitebeard-subtle: 160 30% 95%;
+    --gold: 40 80% 55%;
+    --gold-subtle: 40 50% 95%;
+    --section-alt: 40 15% 96%;
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px hsl(var(--shadow-color) / 0.04),
+      0 4px 8px hsl(var(--shadow-color) / 0.06);
+  }
+  .shadow-soft-lg {
+    box-shadow:
+      0 2px 4px hsl(var(--shadow-color) / 0.06),
+      0 8px 16px hsl(var(--shadow-color) / 0.08);
   }
 }
 

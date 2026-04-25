@@ -58,7 +58,7 @@ const About = () => {
               {aboutConfig.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="font-mono text-xs px-3 py-1.5 rounded border border-border bg-secondary text-muted-foreground"
+                  className="font-mono text-xs px-3 py-1.5 rounded bg-secondary/50 border-0 hover:bg-accent-subtle hover:text-accent transition-all duration-200 cursor-default text-muted-foreground"
                 >
                   {skill}
                 </span>
@@ -75,7 +75,12 @@ const About = () => {
               {expertise.map((item) => (
                 <div
                   key={item.title}
-                  className="p-4 rounded-lg border border-border space-y-2"
+                  className={`p-4 rounded-lg border border-border/60 bg-surface-raised shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 space-y-2 border-t-2 ${
+                    item.title === 'Backend Systems' ? 'border-t-accent' :
+                    item.title === 'Blockchain Engineering' ? 'border-t-elcara' :
+                    item.title === 'AI Systems' ? 'border-t-whitebeard' :
+                    'border-t-gold'
+                  }`}
                 >
                   <h3 className="text-sm font-semibold text-foreground">
                     {item.title}

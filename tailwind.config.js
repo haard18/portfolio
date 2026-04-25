@@ -50,6 +50,21 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "surface-raised": "hsl(var(--surface-raised))",
+        elcara: {
+          DEFAULT: "hsl(var(--elcara))",
+          subtle: "hsl(var(--elcara-subtle))",
+        },
+        whitebeard: {
+          DEFAULT: "hsl(var(--whitebeard))",
+          subtle: "hsl(var(--whitebeard-subtle))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          subtle: "hsl(var(--gold-subtle))",
+        },
+        "accent-subtle": "hsl(var(--accent-subtle))",
+        "section-alt": "hsl(var(--section-alt))",
       },
       borderRadius: {
         lg: "var(--radius)",

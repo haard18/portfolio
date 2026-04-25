@@ -43,7 +43,7 @@ const Resume = () => {
           {/* PDF Viewer */}
           <motion.div
             variants={fadeUp}
-            className="rounded-lg border border-border p-4 bg-card"
+            className="rounded-lg border border-border/60 p-4 bg-surface-raised shadow-soft"
           >
             <PDFViewer file={resume} />
           </motion.div>

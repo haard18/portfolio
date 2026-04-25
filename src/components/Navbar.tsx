@@ -17,7 +17,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-soft">
       <Container className="h-14 flex items-center justify-between">
         <Link to="/" className="font-mono text-lg font-semibold text-foreground hover:text-accent transition-colors">
           haardsolanki.xyz
@@ -30,13 +30,16 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               className={cn(
-                'text-sm transition-colors',
+                'text-sm transition-colors relative',
                 pathname === link.to
                   ? 'text-foreground font-medium'
                   : 'text-muted-foreground hover:text-foreground'
               )}
             >
               {link.label}
+              {pathname === link.to && (
+                <span className="absolute -bottom-[7px] left-0 right-0 h-[2px] bg-accent rounded-full" />
+              )}
             </Link>
           ))}
         </div>
