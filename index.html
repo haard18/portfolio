@@ -6,7 +6,7 @@
   <title>Haard Solanki — Systems Engineer</title>
   <meta name="description" content="Founding Engineer at Elcara, Backend Engineer at WhiteBeard AI. Building trading systems, AI agents, and blockchain infrastructure.">
   <meta name="theme-color" content="#F8F5EC">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F8F5EC'/%3E%3Ctext x='50%25' y='54%25' font-family='Georgia,serif' font-size='44' font-style='italic' font-weight='400' fill='%231A1714' text-anchor='middle' dominant-baseline='middle'%3Eh%3C/text%3E%3Ccircle cx='49' cy='48' r='4.5' fill='%23D4541E'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23FAF8F2'/%3E%3Cg stroke='%231A1A1A' stroke-width='1.6' fill='none' stroke-linecap='round'%3E%3Cline x1='32' y1='32' x2='32' y2='6'/%3E%3Cline x1='32' y1='32' x2='50' y2='14'/%3E%3Cline x1='32' y1='32' x2='58' y2='32'/%3E%3Cline x1='32' y1='32' x2='50' y2='50'/%3E%3Cline x1='32' y1='32' x2='32' y2='58'/%3E%3Cline x1='32' y1='32' x2='14' y2='50'/%3E%3Cline x1='32' y1='32' x2='6' y2='32'/%3E%3Cline x1='32' y1='32' x2='14' y2='14'/%3E%3Cpath d='M22,18 Q32,22 42,18' stroke-width='1'/%3E%3Cpath d='M46,22 Q44,32 46,42' stroke-width='1'/%3E%3Cpath d='M22,46 Q32,42 42,46' stroke-width='1'/%3E%3Cpath d='M18,22 Q22,32 18,42' stroke-width='1'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='3.5' fill='%23DC143C'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,16 +14,16 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --paper: #F8F5EC;
-      --paper-warm: #F2EFE5;
-      --ink: #1A1714;
-      --ink-soft: #2E2924;
-      --ink-muted: #6F665B;
-      --ink-faint: #B0A89C;
-      --rule: #1A1714;
-      --accent: #D4541E;
-      --accent-soft: #C45A2C;
-      --gold: #B89968;
+      --paper: #FAF8F2;
+      --paper-warm: #F2F0EA;
+      --ink: #1A1A1A;
+      --ink-soft: #2C2C2C;
+      --ink-muted: #6B6B6B;
+      --ink-faint: #A8A8A8;
+      --rule: #1A1A1A;
+      --accent: #DC143C;
+      --accent-soft: #B91C2E;
+      --gold: #1B4DD8;
       --serif: 'Fraunces', 'Times New Roman', serif;
       --display: 'Instrument Serif', 'Fraunces', serif;
       --sans: 'Inter', -apple-system, sans-serif;
@@ -52,8 +52,8 @@
       pointer-events: none;
       z-index: 0;
       background-image:
-        radial-gradient(circle at 15% 25%, rgba(212, 84, 30, 0.018) 0%, transparent 35%),
-        radial-gradient(circle at 85% 75%, rgba(26, 23, 20, 0.025) 0%, transparent 45%);
+        radial-gradient(circle at 15% 25%, rgba(220, 20, 60, 0.025) 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(27, 77, 216, 0.022) 0%, transparent 45%);
     }
 
     /* Paper grain — fine SVG noise, multiply blended */
@@ -373,7 +373,7 @@
 
     .hero-tagline-left em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--gold);
     }
 
     .hero-meta {
@@ -448,7 +448,7 @@
       letter-spacing: -0.03em;
     }
 
-    .section-title em { font-style: italic; color: var(--accent); }
+    .section-title em { font-style: italic; color: var(--gold); }
 
     /* ===== Reveal ===== */
     .reveal {
@@ -498,7 +498,7 @@
       font-style: italic;
     }
 
-    .about-prose em { font-style: italic; color: var(--accent); }
+    .about-prose em { font-style: italic; color: var(--gold); }
 
     .roles {
       display: grid;
@@ -592,7 +592,7 @@
       margin-bottom: 12px;
     }
 
-    .stat-num em { font-style: italic; color: var(--accent); }
+    .stat-num em { font-style: italic; color: var(--accent); } /* keep periods pink */
 
     .stat-label {
       font-family: var(--mono);
@@ -813,7 +813,7 @@
       margin-bottom: 48px;
     }
 
-    .contact-headline em { font-style: italic; color: var(--accent); }
+    .contact-headline em { font-style: italic; color: var(--gold); }
 
     .contact-grid {
       display: grid;
@@ -904,6 +904,282 @@
       50% { transform: translateY(-1px) rotate(-2deg); }
     }
 
+    /* ===== Hanging spider mascot (ASCII art by hrr) ===== */
+    .spider-host {
+      position: fixed;
+      top: 0;
+      right: 8%;
+      z-index: 110;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: spiderDrop 28s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .spider-thread {
+      display: block;
+      width: 1px;
+      height: 130px;
+      background: linear-gradient(to bottom, transparent 0%, var(--ink) 8%, var(--ink) 100%);
+      opacity: 0.5;
+    }
+
+    .spider {
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      line-height: 1.0;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+      letter-spacing: 0;
+      transform-origin: top center;
+      animation: spiderSway 4.2s ease-in-out infinite;
+      opacity: 0.85;
+    }
+
+    @keyframes spiderDrop {
+      0%   { transform: translateY(-440px); }
+      6%   { transform: translateY(-440px); }
+      18%  { transform: translateY(0); }
+      62%  { transform: translateY(0); }
+      72%  { transform: translateY(-440px); }
+      100% { transform: translateY(-440px); }
+    }
+
+    @keyframes spiderSway {
+      0%, 100% { transform: rotate(-1.5deg); }
+      50%      { transform: rotate(1.5deg); }
+    }
+
+    /* ===== Thwip web (line shoots from spider on click) ===== */
+    .thwip-layer {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 109;
+      overflow: visible;
+    }
+
+    .thwip-layer line {
+      stroke: var(--ink);
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: thwipDraw 0.18s cubic-bezier(0.5, 0, 0.2, 1) forwards, thwipFade 0.7s ease-in 0.18s forwards;
+    }
+
+    @keyframes thwipDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes thwipFade {
+      0%   { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .thwip-word {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+      font-family: var(--display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      text-shadow: 2px 2px 0 var(--gold);
+      transform: translate(-50%, -50%);
+      animation: thwipWord 700ms cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+    }
+
+    @keyframes thwipWord {
+      0%   { transform: translate(-50%, -50%) scale(0.4) rotate(-10deg); opacity: 0; }
+      20%  { transform: translate(-50%, -55%) scale(1.2) rotate(-6deg); opacity: 1; }
+      55%  { transform: translate(-50%, -50%) scale(1.0) rotate(-4deg); opacity: 1; }
+      100% { transform: translate(-50%, -42%) scale(0.95) rotate(0deg); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spider-host, .thwip-layer, .thwip-word { display: none; }
+    }
+
+    /* ===== Editor's Note ===== */
+    #editor-note {
+      padding: 60px 0 30px;
+    }
+
+    .ed-note {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 28px 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      text-align: center;
+    }
+
+    .ed-note-head {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+
+    .ed-note-head span:first-child { color: var(--accent); font-weight: 600; }
+
+    .ed-note-body {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      line-height: 1.55;
+      font-weight: 300;
+      letter-spacing: -0.005em;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+    }
+
+    .ed-note-body em { font-style: italic; color: var(--gold); }
+
+    .ed-note-sign {
+      font-family: var(--display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ===== Colophon ===== */
+    .colophon {
+      padding: 60px 0 40px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .colophon-head {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .colophon-head span:first-child { color: var(--accent); font-weight: 600; }
+
+    .colophon-grid {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ink-faint);
+      align-items: baseline;
+    }
+
+    .col-row:last-child { border-bottom: none; }
+
+    .col-row dt {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .col-row dd {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ===== Live Now Pill ===== */
+    .now-pill {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 90;
+      background: rgba(248, 245, 236, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 32px rgba(26, 23, 20, 0.10), 0 2px 6px rgba(26, 23, 20, 0.06);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, opacity 0.4s ease 0.2s;
+    }
+
+    .now-pill.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .now-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.6);
+      animation: nowPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes nowPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.55); transform: scale(1); }
+      70%  { box-shadow: 0 0 0 9px rgba(220, 20, 60, 0); transform: scale(1.05); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); transform: scale(1); }
+    }
+
+    .now-stack {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .now-time {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.1em;
+    }
+
+    .now-status {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .now-dot { animation: none; }
+      .now-pill { transition: none; }
+    }
+
     /* ===== Responsive ===== */
     @media (max-width: 900px) {
       .hero-main { grid-template-columns: 1fr; gap: 32px; align-items: start; }
@@ -955,6 +1231,20 @@
       .hero-overline > span:nth-child(2),
       .hero-overline > span:nth-child(4) { display: none; }
       .nav-toggle { padding: 8px; }
+      #editor-note { padding: 40px 0 20px; }
+      .ed-note { padding: 22px 0; }
+      .ed-note-head { font-size: 0.58rem; gap: 12px; flex-wrap: wrap; }
+      .ed-note-body { font-size: 1rem; }
+      .colophon { padding: 50px 0 30px; }
+      .col-row { grid-template-columns: 1fr; gap: 4px; padding: 10px 0; }
+      .col-row dd { font-size: 0.92rem; }
+      .now-pill { bottom: 14px; right: 14px; padding: 7px 11px; gap: 8px; }
+      .now-time { font-size: 0.66rem; }
+      .now-status { font-size: 0.55rem; }
+      .spider-host { right: 4%; }
+      .spider-thread { height: 80px; }
+      .spider { font-size: 0.36rem; }
+      .thwip-word { font-size: 1.25rem; }
       .hero-name { letter-spacing: -0.045em; line-height: 0.9; }
       .hero-tagline { margin-top: 32px; padding-top: 20px; }
       .hero-tagline-left { font-size: 1.15rem; }
@@ -1017,6 +1307,47 @@
   </style>
 </head>
 <body>
+
+<!-- Thwip line layer (web shoots from spider on click) -->
+<svg class="thwip-layer" id="thwipLayer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"></svg>
+
+<!-- Hanging spider (ASCII art by hrr — asciiart.eu) -->
+<div class="spider-host" id="spiderHost" aria-hidden="true">
+  <span class="spider-thread"></span>
+  <pre class="spider" id="spider">           ;               ,
+         ,;                 '.
+        ;:                   :;
+       ::                     ::
+       ::                     ::
+       ':                     :
+        :.                    :
+     ;' ::                   ::  '
+    .'  ';                   ;'  '.
+   ::    :;                 ;:    ::
+   ;      :;.             ,;:     ::
+   :;      :;:           ,;"      ::
+   ::.      ':;  ..,.;  ;:'     ,.;:
+    "'"...   '::,::::: ;:   .;.;""'
+        '"""....;:::::;,;.;"""
+    .:::.....'"':::::::'",...;::::;.
+   ;:' '""'"";.,;:::::;.'""""""  ':;
+  ::'         ;::;:::;::..         :;
+ ::         ,;:::::::::::;:..       ::
+ ;'     ,;;:;::::::::::::::;";..    ':.
+::     ;:"  ::::::"""'::::::  ":     ::
+ :.    ::   ::::::;  :::::::   :     ;
+  ;    ::   :::::::  :::::::   :    ;
+   '   ::   ::::::....:::::'  ,:   '
+    '  ::    :::::::::::::"   ::
+       ::     ':::::::::"'    ::
+       ':       """""""'      ::
+        ::                   ;:
+        ':;                 ;:"
+          ';              ,;'
+            "'           '"
+              '</pre>
+</div>
+
 <main>
 
   <!-- Top Bar -->
@@ -1093,6 +1424,22 @@
             <span class="hero-meta-value">a NATS race condition (probably)</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editor's Note -->
+  <section id="editor-note" aria-label="From the editor">
+    <div class="container">
+      <div class="ed-note">
+        <div class="ed-note-head">
+          <span>From the Editor</span>
+          <span>Apr · 2026 / Q2</span>
+        </div>
+        <p class="ed-note-body">
+          <em>This issue:</em> orderbooks, agentic systems, and a market maker written in C++. The trophy shelf is mostly under-25 hackathon hardware, the résumé sits on page 06, and the contact line is open until the inbox catches fire. Read top to bottom — or skip around. The table of contents is your map.
+        </p>
+        <p class="ed-note-sign">— H.S.</p>
       </div>
     </div>
   </section>
@@ -1462,6 +1809,35 @@
     </div>
   </section>
 
+  <!-- Colophon -->
+  <section class="colophon" aria-label="Colophon">
+    <div class="container">
+      <div class="colophon-head">
+        <span>Colophon</span>
+        <span>End of Issue</span>
+      </div>
+      <dl class="colophon-grid">
+        <div class="col-row"><dt>Type</dt><dd>Fraunces · Instrument Serif · JetBrains Mono · Inter</dd></div>
+        <div class="col-row"><dt>Set on</dt><dd>Off-white paper, ink #1A1A1A, spidey red #DC143C &amp; cobalt #1B4DD8</dd></div>
+        <div class="col-row"><dt>Built in</dt><dd>vanilla HTML, CSS &amp; JS · zero frameworks · zero build step</dd></div>
+        <div class="col-row"><dt>Page weight</dt><dd>≈ 50&nbsp;KB · no analytics · no trackers · no cookies</dd></div>
+        <div class="col-row"><dt>Served by</dt><dd>Coolify · nginx · Let's Encrypt · Hardy Labs Cloud</dd></div>
+        <div class="col-row"><dt>Made with</dt><dd>vim, vibes, and several cups of black coffee</dd></div>
+        <div class="col-row"><dt>Easter egg</dt><dd>click anywhere when the spider's hanging — go on, thwip something</dd></div>
+        <div class="col-row"><dt>Spider</dt><dd>ASCII art by <a href="https://www.asciiart.eu/animals/spiders" target="_blank" rel="noopener" style="color: inherit; border-bottom: 1px solid currentColor;">hrr</a> · public domain</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Live Now Pill -->
+  <aside class="now-pill" id="nowPill" aria-label="Live status">
+    <span class="now-dot"></span>
+    <div class="now-stack">
+      <div class="now-time" id="nowTime">— IST</div>
+      <div class="now-status" id="nowStatus">Loading…</div>
+    </div>
+  </aside>
+
   <!-- Footer -->
   <footer>
     <div>© 2026 — Haard Solanki<span class="accent">.</span></div>
@@ -1513,6 +1889,83 @@
   const topnav = document.getElementById('topnav');
   navToggle.addEventListener('click', () => topnav.classList.toggle('open'));
   topnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => topnav.classList.remove('open')));
+
+  // Live "Now" pill — IST clock + hour-based status
+  const nowPill = document.getElementById('nowPill');
+  const nowTimeEl = document.getElementById('nowTime');
+  const nowStatusEl = document.getElementById('nowStatus');
+
+  const statusByHour = (h) => {
+    if (h >= 0 && h < 4)   return 'Probably grinding';
+    if (h < 7)             return 'Coffee #3, debugging';
+    if (h < 9)             return 'Asleep (probably)';
+    if (h < 12)            return 'Just opened laptop';
+    if (h < 14)            return 'Lunch &amp; inbox';
+    if (h < 17)            return 'Deep in code';
+    if (h < 20)            return 'Shipping things';
+    if (h < 23)            return 'Reviewing PRs';
+    return 'One more commit';
+  };
+
+  function updateNow() {
+    const now = new Date();
+    // IST = UTC+5:30
+    const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const ist = new Date(utcMs + (5.5 * 60 * 60 * 1000));
+    const h = ist.getHours();
+    const m = ist.getMinutes();
+    const hh = h.toString().padStart(2, '0');
+    const mm = m.toString().padStart(2, '0');
+    nowTimeEl.textContent = `${hh}:${mm} IST`;
+    nowStatusEl.innerHTML = statusByHour(h);
+  }
+
+  updateNow();
+  setInterval(updateNow, 30000);
+  // Reveal the pill after a short beat so it doesn't crash the hero
+  setTimeout(() => nowPill.classList.add('visible'), 600);
+
+  // Thwip web — shoots a real web from the spider toward the click point
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const spider = document.getElementById('spider');
+  const thwipLayer = document.getElementById('thwipLayer');
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  function spiderTip() {
+    const r = spider.getBoundingClientRect();
+    // Only return a tip if the spider is actually on-screen
+    if (r.bottom < 20 || r.top > window.innerHeight) return null;
+    return { x: r.left + r.width / 2, y: r.bottom - 4 };
+  }
+
+  document.addEventListener('click', (e) => {
+    if (reduceMotion.matches) return;
+    const tip = spiderTip();
+    if (!tip) return;
+    const tx = e.clientX, ty = e.clientY;
+    const dx = tx - tip.x, dy = ty - tip.y;
+    const len = Math.sqrt(dx * dx + dy * dy);
+
+    // Web silk line drawn from spider to the click point
+    const line = document.createElementNS(SVG_NS, 'line');
+    line.setAttribute('x1', tip.x);
+    line.setAttribute('y1', tip.y);
+    line.setAttribute('x2', tx);
+    line.setAttribute('y2', ty);
+    line.setAttribute('stroke-dasharray', len);
+    line.setAttribute('stroke-dashoffset', len);
+    thwipLayer.appendChild(line);
+
+    // Comic-book THWIP! at the click point
+    const word = document.createElement('span');
+    word.className = 'thwip-word';
+    word.textContent = 'THWIP!';
+    word.style.left = tx + 'px';
+    word.style.top = (ty - 18) + 'px';
+    document.body.appendChild(word);
+
+    setTimeout(() => { line.remove(); word.remove(); }, 920);
+  }, { passive: true });
 </script>
 
 </body>
