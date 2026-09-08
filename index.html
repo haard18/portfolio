@@ -1849,18 +1849,29 @@
           <span class="work-num">013</span>
           <div class="work-main">
             <div class="work-title">Dejavu <em>— Robot Safety System</em></div>
-            <div class="work-desc">before the robot acts, it imagines. dejavu evaluates possible futures of an action — simulating outcomes and scoring them for danger — and only lets the policy proceed when the imagined futures clear the bar. built in 27 hours; won the launchd hackathon.</div>
-            <div class="work-metrics">Winner · launchd hackathon · 27 hours</div>
+            <div class="work-desc">before the robot acts, it imagines. a world model (Reactor's LingBot World 2) renders three candidate actions on the real scene; a PoseNet inverse-dynamics model i trained on SO-101 teleoperation reads joint angles back out of the imagined frames (r = 0.999 on held-out footage); Claude judges before/after and fails closed; if no branch survives, the robot refuses out loud. the finding: a behaviour-cloned policy that tracks the real robot at r = 0.953 collapses to r = 0.020 on imagined footage — the world model has never seen this actor. solo, built in 36 hours; won the launchd hackathon (Inception Hackathon 2.0, Robotics &amp; Simulation track).</div>
+            <div class="work-metrics">Winner · Inception Hackathon 2.0 · 36 hours · solo</div>
           </div>
-          <div class="work-tag"><span class="org-personal">launchd — Winner</span><br>Robotics · World Models · Safety</div>
+          <div class="work-tag"><span class="org-personal">launchd — Winner</span><br>World Models · PyTorch · Claude</div>
+          <span class="work-arrow">→</span>
+        </a>
+
+        <a class="work-item" href="https://github.com/haard18/nanitrap" target="_blank" rel="noopener">
+          <span class="work-num">014</span>
+          <div class="work-main">
+            <div class="work-title">nani <em>— The AI That Wants to Be Scammed</em></div>
+            <div class="work-desc">she picks up so your grandmother doesn't have to. a Gemini Live voice agent answers scam calls as a hesitant, hard-of-hearing elder and keeps the scammer talking, while a parallel extractor builds a live structured dossier — genre, institution, payment rail, UPI IDs, mule numbers — and drafts a 1930 cybercrime complaint inside the golden hour. an immunizer compiles a WhatsApp warning card in local languages so the family network hears before the next call. real Twilio media-streams bridge, a native WhisperFlow handoff button, and a README that says exactly what's staged. built for the Google DeepMind Bangalore hackathon.</div>
+            <div class="work-metrics">Google DeepMind Bangalore Hackathon · Real-Time Multimodal</div>
+          </div>
+          <div class="work-tag"><span class="org-personal">Hackathon</span><br>Gemini Live · Twilio · TypeScript</div>
           <span class="work-arrow">→</span>
         </a>
 
         <a class="work-item" href="https://github.com/haard18" target="_blank" rel="noopener">
-          <span class="work-num">014</span>
+          <span class="work-num">015</span>
           <div class="work-main">
             <div class="work-title">Everything <em>else</em></div>
-            <div class="work-desc">141 public repos: a Twitter/X CLI, Claude Code workflow tooling, hackathon smart contracts, an npm-published CLI. the private ones are where the interesting stuff lives.</div>
+            <div class="work-desc">142 public repos: a Twitter/X CLI, Claude Code workflow tooling, hackathon smart contracts, an npm-published CLI. the private ones are where the interesting stuff lives.</div>
           </div>
           <div class="work-tag"><span class="org-personal">GitHub</span><br>@haard18</div>
           <span class="work-arrow">→</span>
@@ -1882,7 +1893,7 @@
         <div class="ach">
           <div class="ach-date">August · 2026</div>
           <div class="ach-title">Winner <em>—</em> launchd Hackathon</div>
-          <div class="ach-org">launchd · Dejavu</div>
+          <div class="ach-org">Inception Hackathon 2.0 · launchd · Dejavu</div>
         </div>
         <div class="ach">
           <div class="ach-date">June · 2025</div>

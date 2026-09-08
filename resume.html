@@ -569,7 +569,7 @@
     @media print {
       @page {
         size: A4;
-        margin: 14mm 14mm 14mm 14mm;
+        margin: 12mm 13mm 12mm 13mm;
       }
 
       html, body {
@@ -604,22 +604,27 @@
         margin-bottom: 18px;
       }
 
-      .section { margin-bottom: 18px; page-break-inside: avoid; }
+      /* Let sections flow across pages; only keep individual entries intact. */
+      .section { margin-bottom: 14px; break-inside: auto; page-break-inside: auto; }
+      .section-head { break-after: avoid; page-break-after: avoid; margin-bottom: 8px; }
 
-      .section-title { font-size: 1.5rem; }
+      .section-title { font-size: 1.3rem; }
+      .summary { font-size: 0.82rem; line-height: 1.5; }
 
-      .exp { padding: 10px 0; page-break-inside: avoid; }
-      .exp-body .org { font-size: 1.3rem; }
-      .exp-body li { font-size: 0.78rem; }
+      .exp { padding: 8px 0; break-inside: avoid; page-break-inside: avoid; }
+      .exp-body .org { font-size: 1.15rem; }
+      .exp-body li { font-size: 0.74rem; line-height: 1.45; margin-bottom: 3px; }
 
-      .proj { page-break-inside: avoid; padding: 8px 0; }
-      .proj-name { font-size: 1.05rem; }
-      .proj-desc { font-size: 0.74rem; }
+      .proj { break-inside: avoid; page-break-inside: avoid; padding: 7px 0; }
+      .proj-name { font-size: 0.95rem; }
+      .proj-desc { font-size: 0.7rem; line-height: 1.4; }
+      .proj-tech { font-size: 0.6rem; }
 
-      .skills-list { font-size: 0.9rem; }
+      .skills-row { padding: 5px 0; }
+      .skills-list { font-size: 0.8rem; }
 
-      .ach-title { font-size: 0.82rem; }
-      .ach-row { padding: 6px 0; }
+      .ach-title { font-size: 0.76rem; }
+      .ach-row { padding: 4px 0; break-inside: avoid; page-break-inside: avoid; }
 
       a { color: black !important; border-bottom: 1px solid #999 !important; }
 
@@ -629,7 +634,10 @@
 
       em { font-weight: 600; }
 
-      .signature { margin-top: 24px; }
+      .edu { padding: 8px 0; break-inside: avoid; page-break-inside: avoid; }
+      .edu-school { font-size: 1.15rem; }
+      .edu-note { font-size: 0.74rem; line-height: 1.4; }
+      .signature { margin-top: 10px; padding-top: 8px; font-size: 0.58rem; break-inside: avoid; page-break-inside: avoid; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -821,6 +829,27 @@
         </div>
 
         <div class="proj">
+          <div class="proj-org personal">Independent</div>
+          <div class="proj-name">Dejavu <em>Robot Safety</em></div>
+          <div class="proj-desc">Robot imagines three futures in a world model, decodes them with a PoseNet I trained (r = 0.999), and lets Claude judge — fails closed. Solo, 36 hours, hackathon winner.</div>
+          <div class="proj-tech">PyTorch · LingBot World 2 · Claude</div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-org personal">Independent</div>
+          <div class="proj-name">tracekit <em>Traces → Model</em></div>
+          <div class="proj-desc">Mines your coding-agent session logs and QLoRA-tunes a 0.5B model that handles ~31% of edit calls offline; falls through to a frontier API otherwise.</div>
+          <div class="proj-tech">Python · QLoRA · Local inference</div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-org personal">Independent</div>
+          <div class="proj-name">nani <em>Scam Honeypot</em></div>
+          <div class="proj-desc">Gemini Live voice agent that answers scam calls as an elder, extracts a live dossier of the scam, and drafts the cybercrime complaint. Google DeepMind Bangalore Hackathon.</div>
+          <div class="proj-tech">Gemini Live · Twilio · TypeScript</div>
+        </div>
+
+        <div class="proj">
           <div class="proj-org elcara">Elcara</div>
           <div class="proj-name">Poly <em>Ranker</em></div>
           <div class="proj-desc">Polymarket wallet scoring system with token holder analysis and ranking.</div>
@@ -871,7 +900,7 @@
         <div class="ach-row">
           <div class="ach-date">Aug 2026</div>
           <div class="ach-title">Winner <em>—</em> launchd Hackathon (Dejavu)</div>
-          <div class="ach-org">launchd</div>
+          <div class="ach-org">Inception Hackathon 2.0 · launchd</div>
         </div>
         <div class="ach-row">
           <div class="ach-date">Jun 2025</div>
@@ -944,7 +973,7 @@
     <!-- Signature -->
     <div class="signature">
       <span>haardsolanki.xyz <span class="accent">·</span> 2026</span>
-      <span>Last updated <span class="accent">·</span> Q2 2026</span>
+      <span>Last updated <span class="accent">·</span> Sep 2026</span>
     </div>
 
   </div>
